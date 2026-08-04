@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pharma Tháng 8 · Động lực AOV ngành hàng · 30Shine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" />
+<style>
+  :root{
+    --navy-deep:#142C61; --navy:#1E408B; --blue:#2E5AA8; --navy-mid:#5E7CC0; --navy-pale:#AEC4E8;
+    --paper:#FCFAF6; --cream:#ECE6D9; --ink:#1C2433;
+    --wood:#8A6A45; --wood-lt:#B89668; --mute:#7C7566; --mute-warm:#8A8273; --hair:#E6DFD2;
+    --red:#B4321E; --red-bg:#FBE7E2; --green:#2E6B4F; --green-bg:#E4F0E9;
+    --sans:'Be Vietnam Pro',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);}
+  body{font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;}
+  .inner{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* ===== COVER ===== */
+  .cover{background:linear-gradient(158deg,#1E408B 0%,#1A3A7E 55%,#142C61 100%);color:#fff;position:relative;overflow:hidden;}
+  .cover::before{content:"Pharma";position:absolute;left:40px;bottom:-14%;z-index:0;font-weight:900;font-size:34vh;line-height:.7;letter-spacing:-.055em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;}
+  .cover .inner{position:relative;z-index:1;padding-top:26px;padding-bottom:40px;}
+  .cover-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16);}
+  .cover-top .brand{font-weight:800;font-size:13px;letter-spacing:.24em;}
+  .cover-top .issue{font-weight:500;font-size:11px;letter-spacing:.16em;color:var(--wood-lt);text-transform:uppercase;}
+  .cover .kicker{display:inline-block;margin-top:40px;font-weight:600;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--wood-lt);}
+  .cover h1{font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:1.0;letter-spacing:-.032em;margin:16px 0 0;max-width:20ch;}
+  .cover .standfirst{display:flex;gap:0 40px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-pale);}
+  .cover .standfirst b{color:#fff;font-weight:600;}
+  .cover .standfirst .tag{background:var(--wood-lt);color:var(--navy-deep);padding:2px 7px;border-radius:2px;font-size:10px;font-weight:700;}
+
+  /* ===== TABS NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy-deep);border-bottom:1px solid rgba(255,255,255,.12);}
+  .nav .inner{display:flex;gap:2px;overflow-x:auto;padding:0 40px;}
+  .nav button{appearance:none;background:transparent;border:none;color:var(--navy-pale);font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.01em;padding:15px 16px;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.15s;}
+  .nav button .n{color:var(--wood-lt);font-weight:800;margin-right:7px;}
+  .nav button:hover{color:#fff;}
+  .nav button.active{color:#fff;border-bottom-color:var(--wood-lt);}
+
+  /* ===== STATS ===== */
+  .stats{background:var(--cream);border-bottom:1px solid var(--hair);}
+  .stats .inner{padding:30px 40px;display:grid;grid-template-columns:repeat(4,1fr);}
+  .stat{padding:4px 24px;border-left:1px solid var(--hair);}
+  .stat:first-child{border-left:none;padding-left:0;}
+  .stat .v{font-weight:800;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--navy-deep);}
+  .stat .v small{font-size:16px;font-weight:700;color:var(--wood);}
+  .stat .l{margin-top:9px;font-size:11.5px;line-height:1.4;color:var(--mute-warm);font-weight:500;}
+
+  .body{padding:8px 0 72px;}
+  .tab{display:none;}
+  .tab.active{display:block;}
+  .lead{padding:46px 0 4px;}
+  .lead p{font-weight:400;font-size:22px;line-height:1.5;margin:0;color:var(--navy-deep);letter-spacing:-.015em;max-width:40ch;}
+  .lead p .first{font-weight:800;color:var(--wood);}
+  .lead .dek{margin-top:14px;font-size:15px;color:var(--mute);max-width:74ch;line-height:1.62;}
+
+  .section{padding:38px 0 6px;margin-top:32px;border-top:2px solid var(--navy-deep);}
+  .section.first{border-top:none;margin-top:8px;padding-top:20px;}
+  .section .head{display:grid;grid-template-columns:56px 1fr;gap:0 20px;align-items:start;margin-bottom:22px;}
+  .section .num{font-weight:800;font-size:28px;line-height:1;color:var(--wood);letter-spacing:-.02em;}
+  .section h2{font-weight:700;font-size:26px;line-height:1.16;letter-spacing:-.02em;color:var(--navy-deep);margin:0;}
+  .section .sub{display:block;font-size:14px;color:var(--mute);margin-top:8px;line-height:1.5;max-width:82ch;}
+  .section .body-col{grid-column:2;}
+
+  blockquote{margin:20px 0;padding:12px 0 12px 22px;border-left:3px solid var(--wood);font-weight:500;font-size:18px;line-height:1.46;color:var(--navy-deep);max-width:62ch;letter-spacing:-.01em;}
+
+  .tbl{margin:6px 0 4px;overflow-x:auto;}
+  table{border-collapse:collapse;width:100%;font-size:11.5px;}
+  thead th{text-align:left;font-weight:600;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);padding:0 10px 6px 0;border-bottom:1.5px solid var(--navy-deep);white-space:nowrap;}
+  thead th.num{text-align:right;}
+  thead th.ctr{text-align:center;}
+  td{padding:5px 10px 5px 0;border-bottom:1px solid var(--hair);color:var(--ink);vertical-align:top;}
+  td:first-child{font-weight:600;color:var(--navy-deep);}
+  td.num{text-align:right;font-size:11px;white-space:nowrap;}
+  /* cân bằng tiêu đề nhỏ hơn số, đồng bộ cỡ chữ chuẩn (tab Tổng quan, Theo dõi ngày, Bố & Con) */
+  #t0 .tbl thead th,#t2 .tbl thead th,#t5 .tbl thead th{font-size:9px;letter-spacing:.03em;}
+  #t0 .tbl td.num,#t2 .tbl td.num,#t5 .tbl td.num{font-size:11.5px;font-weight:500;}
+  td.ctr{text-align:center;}
+  tbody tr:nth-child(even) td{background:#FAF6EF;}
+  tbody tr.total td{border-top:1.5px solid var(--navy-deep);border-bottom:1.5px solid var(--navy-deep);font-weight:700;background:#F3EEE3;}
+  .rd{display:inline-block;width:7px;height:7px;border-radius:50%;margin-left:8px;vertical-align:middle;position:relative;top:-1px;}
+  .rd.s{background:var(--navy-deep);}.rd.m{background:var(--navy-mid);}.rd.w{background:var(--navy-pale);}
+
+  /* ===== PROGRAM CARDS ===== */
+  .fam{margin:14px 0 8px;}
+  .fam-h{display:flex;align-items:baseline;gap:12px;margin:26px 0 4px;padding-bottom:8px;border-bottom:1px dashed var(--wood);}
+  .fam-h .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--wood);padding:3px 9px;border-radius:2px;}
+  .fam-h .lbl.b{background:var(--navy-deep);}
+  .fam-h h3{margin:0;font-size:19px;font-weight:700;color:var(--navy-deep);letter-spacing:-.01em;}
+  .fam-h .tail{margin-left:auto;font-size:12px;color:var(--mute);}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
+  .card{border:1.5px solid var(--navy-deep);border-radius:5px;background:#fff;overflow:hidden;display:flex;flex-direction:column;}
+  .card .ch{background:var(--navy-deep);color:#fff;padding:12px 15px;}
+  .card.g .ch{background:linear-gradient(135deg,var(--wood) 0%,#6E5335 100%);}
+  .card .ch .tt{font-weight:800;font-size:16px;line-height:1.2;letter-spacing:-.01em;}
+  .card .ch .st{font-size:11px;color:var(--navy-pale);margin-top:3px;letter-spacing:.02em;text-transform:uppercase;font-weight:600;}
+  .card.g .ch .st{color:#F0E4D4;}
+  .card .cb{padding:13px 15px;flex:1;}
+  .card .row{display:flex;gap:8px;font-size:12.5px;padding:5px 0;border-bottom:1px dotted var(--hair);line-height:1.42;}
+  .card .row:last-child{border-bottom:none;}
+  .card .row .k{color:var(--mute);flex:0 0 76px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.03em;padding-top:1px;}
+  .card .row .val{color:var(--ink);flex:1;}
+  .card .row .val b{color:var(--navy-deep);}
+  .card .foot{background:#F3EEE3;border-top:1px solid var(--hair);padding:10px 15px;display:flex;justify-content:space-between;align-items:center;}
+  .card .foot .lng{font-weight:800;font-size:19px;color:var(--green);letter-spacing:-.02em;}
+  .card .foot .lng small{font-size:11px;font-weight:600;color:var(--mute);}
+  .card .foot .bin{font-size:11px;text-align:right;color:var(--mute);line-height:1.3;}
+
+  /* controls */
+  .ctrlbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--cream);border:1px solid var(--hair);border-radius:5px;padding:12px 15px;margin:6px 0 14px;}
+  .ctrlbar label{font-size:12px;font-weight:700;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.04em;}
+  .ctrlbar select,.ctrlbar input[type=number]{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--navy-deep);border:1px solid var(--navy-mid);border-radius:4px;padding:5px 9px;background:#fff;}
+  .btn{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.03em;border:1.5px solid var(--navy-deep);background:var(--navy-deep);color:#fff;border-radius:4px;padding:7px 13px;cursor:pointer;}
+  .btn.ghost{background:#fff;color:var(--navy-deep);}
+  .btn:hover{opacity:.9;}
+  .hint{font-size:11.5px;color:var(--mute);margin-left:auto;}
+
+  /* editable actual cells */
+  td .ci{width:74px;font-family:var(--sans);font-size:12px;font-weight:600;text-align:right;border:1px solid var(--hair);border-radius:3px;padding:3px 5px;background:#fff;color:var(--ink);}
+  td .ci:focus{outline:2px solid var(--navy-mid);border-color:var(--navy-mid);}
+  td.miss{background:var(--red-bg)!important;}
+  td.miss .ci{color:var(--red);border-color:var(--red);font-weight:700;}
+  td.hit .ci{color:var(--green);}
+  .mt-tgt{display:block;font-size:9.5px;color:var(--mute-warm);font-weight:600;margin-bottom:2px;letter-spacing:.02em;}
+  th.grp{border-bottom:none;padding-bottom:2px;color:var(--wood);font-weight:800;font-size:10px;letter-spacing:.06em;}
+  .metfoot{font-size:11.5px;color:var(--mute);margin-top:10px;line-height:1.55;max-width:90ch;}
+
+  /* checklist */
+  .clgrp{margin:22px 0 8px;}
+  .clgrp>h3{display:flex;align-items:center;gap:10px;font-size:17px;color:var(--navy-deep);margin:0 0 4px;font-weight:700;}
+  .clgrp>h3 .g{font-size:11px;font-weight:800;color:#fff;background:var(--navy-deep);width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;flex:0 0 24px;}
+  .clgrp.design>h3 .g{background:var(--wood);}
+  .clgrp>.gd{font-size:12.5px;color:var(--mute);margin:0 0 6px 34px;}
+  .clgrp.design{border:1.5px dashed var(--wood);border-radius:6px;padding:14px 16px;background:#FBF7F1;}
+  table.cl td{font-size:12.5px;vertical-align:middle;}
+  table.cl td:first-child{font-weight:500;color:var(--ink);max-width:none;}
+  table.cl .std{color:var(--mute);font-size:11.5px;line-height:1.4;}
+  table.cl .own{white-space:nowrap;font-weight:600;color:var(--navy);font-size:11.5px;}
+  table.cl input.dt{font-family:var(--sans);font-size:11.5px;border:1px solid var(--hair);border-radius:3px;padding:3px 5px;width:110px;color:var(--navy-deep);font-weight:600;background:#fff;}
+  .chk{display:inline-flex;align-items:center;gap:6px;cursor:pointer;user-select:none;}
+  .chk input{width:17px;height:17px;accent-color:var(--green);cursor:pointer;}
+  tr.done td{background:var(--green-bg)!important;}
+  tr.done td:first-child{text-decoration:line-through;color:var(--mute);}
+  .prog-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--navy-deep);background:var(--cream);border:1px solid var(--hair);border-radius:20px;padding:4px 12px;margin-left:10px;}
+
+  .pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:2px;vertical-align:1px;}
+  .pill.hot{background:#F2E0D6;color:#8A3E1E;}.pill.ok{background:#E3EAF7;color:var(--navy-deep);}.pill.wait{background:#F5F0E6;color:var(--wood);}
+  .tagsrc{display:inline-block;background:var(--navy-deep);color:#fff;padding:1px 6px;border-radius:2px;font-size:9px;font-weight:700;letter-spacing:.04em;vertical-align:1px;}
+  .tagsrc.g{background:var(--wood);}
+  .note-sm{font-size:12px;color:var(--mute);line-height:1.55;margin-top:8px;max-width:88ch;}
+  .kbox{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0;}
+  .kb{border:1px solid var(--hair);border-radius:5px;padding:12px 14px;background:#fff;}
+  .kb .kv{font-weight:800;font-size:22px;color:var(--navy-deep);letter-spacing:-.02em;}
+  .kb .kv.pos{color:var(--green);}.kb .kv.neg{color:var(--red);}
+  .kb .kl{font-size:11px;color:var(--mute-warm);margin-top:5px;line-height:1.4;font-weight:500;}
+
+  /* ===== card extra rows (kịch bản / vị trí) ===== */
+  .card .row.scr .k,.card .row.pos .k{color:var(--wood);}
+  .card .row.scr .val{font-size:12px;line-height:1.4;}
+  .card .pos-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px;}
+  .postag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:20px;background:var(--cream);color:var(--navy-deep);border:1px solid var(--hair);}
+  .postag.und{background:#EAE1F3;color:#5A3E86;border-color:#D8C9EC;}
+  .postag.relax{background:#E1EDF3;color:#2E6187;border-color:#C9DEEC;}
+  .postag.sp{background:#F3ECE1;color:#7A5A2E;border-color:#EADBC9;}
+
+  /* ===== campaign tracker (form theo dõi lãi/lỗ) ===== */
+  .campcard{border:1px solid var(--hair);border-radius:8px;background:#fff;overflow:hidden;margin:8px 0 16px;}
+  .campcard .cch{display:flex;align-items:center;gap:12px;padding:14px 18px 12px;flex-wrap:wrap;}
+  .campcard .cch h3{margin:0;font-size:18px;color:var(--navy-deep);font-weight:800;letter-spacing:-.01em;}
+  .badge-ok{font-size:11px;font-weight:700;color:var(--green);background:var(--green-bg);border:1px solid #BFE0CF;border-radius:20px;padding:3px 11px;}
+  .campcond{margin:0 18px 14px;background:#F3F8F5;border:1px solid #DDEBE3;border-radius:6px;padding:12px 14px;font-size:12.5px;line-height:1.55;color:var(--ink);}
+  .campcond b{color:var(--navy-deep);}
+  .campcond .gift{display:block;margin-top:7px;padding-top:7px;border-top:1px dashed #CFE0D6;font-weight:600;color:var(--wood);}
+  .kbox3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hair);border-radius:7px;overflow:hidden;margin:8px 0 12px;}
+  .kbox3 .kb3{padding:14px 18px;border-left:1px solid var(--hair);}
+  .kbox3 .kb3:first-child{border-left:none;}
+  .kbox3 .kl3{font-size:11px;color:var(--mute-warm);font-weight:600;margin-bottom:6px;}
+  .kbox3 .kv3{font-weight:800;font-size:26px;color:var(--navy-deep);letter-spacing:-.02em;}
+  .kbox3 .kv3 small{font-size:13px;font-weight:600;color:var(--mute);}
+  .kbox3 .kv3.pos{color:var(--green);}.kbox3 .kv3.neg{color:var(--red);}
+  .campctx{font-size:11.5px;color:var(--mute);line-height:1.6;margin:2px 0 8px;}
+  .campctx b{color:var(--navy-deep);font-weight:600;}
+  .pbar{display:inline-block;width:56px;height:7px;border-radius:4px;background:#E7EAF1;position:relative;vertical-align:middle;margin-right:8px;overflow:hidden;}
+  .pbar i{position:absolute;left:0;top:0;bottom:0;background:var(--wood);border-radius:4px;}
+  td .bi{width:48px;font-family:var(--sans);font-size:11px;font-weight:700;text-align:right;border:1px solid var(--hair);border-radius:3px;padding:3px 5px;background:#fff;color:var(--navy-deep);}
+  td .bi:focus{outline:2px solid var(--navy-mid);border-color:var(--navy-mid);}
+  .hq{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;}
+  .hq.none{background:var(--cream);color:var(--wood);}
+  .hq.win{background:var(--green-bg);color:var(--green);}
+  .hq.loss{background:var(--red-bg);color:var(--red);}
+
+  /* ===== toy collection (Bố & Con) ===== */
+  .toyset{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0;}
+  .toy{border:1px solid var(--hair);border-radius:7px;background:#fff;padding:10px 8px;text-align:center;}
+  .toy .em{font-size:26px;line-height:1;}
+  .toy .nm{font-size:11px;font-weight:700;color:var(--navy-deep);margin-top:6px;line-height:1.2;}
+  .toy .no{font-size:9.5px;color:var(--mute-warm);font-weight:600;margin-top:2px;}
+  .toy.b2{border-color:var(--wood);background:#FBF7F1;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:14px 0;}
+  .steps.s5{grid-template-columns:repeat(5,1fr);}
+  .step{border:1.5px solid var(--navy-deep);border-radius:6px;background:#fff;padding:13px 14px;}
+  .step .sn{font-weight:800;font-size:12px;color:#fff;background:var(--navy-deep);width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;}
+  .step .stt{font-weight:700;font-size:13.5px;color:var(--navy-deep);margin:9px 0 5px;line-height:1.25;}
+  .step .sds{font-size:12px;color:var(--mute);line-height:1.5;}
+  .mech{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+  .mbox{border:1.5px solid var(--wood);border-radius:7px;background:#FBF7F1;padding:14px 16px;}
+  .mbox.b2{border-color:var(--navy-deep);background:#fff;}
+  .mbox .mh{font-weight:800;font-size:15px;color:var(--navy-deep);margin-bottom:4px;}
+  .mbox .mp{font-size:12.5px;color:var(--ink);line-height:1.55;}
+  .mbox .mp b{color:var(--wood);}
+
+  footer{background:linear-gradient(158deg,#1E408B 0%,#142C61 100%);color:#fff;margin-top:40px;}
+  footer .inner{padding:26px 40px 34px;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;}
+  footer .colophon{font-weight:800;font-size:12px;letter-spacing:.22em;}
+  footer .meta{font-size:11px;color:var(--navy-pale);max-width:56ch;text-align:right;}
+
+  @media(max-width:920px){
+    .cards{grid-template-columns:1fr;} .stats .inner{grid-template-columns:repeat(2,1fr);row-gap:20px;}
+    .stat{padding-left:0;border-left:none;} .inner{padding:0 18px;} .nav .inner{padding:0 18px;}
+    .kbox{grid-template-columns:repeat(2,1fr);}
+    .toyset{grid-template-columns:repeat(3,1fr);} .steps,.steps.s5,.mech{grid-template-columns:1fr;} .kbox3{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover">
+  <div class="inner">
+    <div class="cover-top">
+      <span class="brand">30SHINE · NGÀNH HÀNG</span>
+      <span class="issue">Kế hoạch Tháng 8 · 2026</span>
+    </div>
+    <span class="kicker">Chương trình Pharma Bio · Động lực chính</span>
+    <h1>Pharma Tháng 8 — cỗ máy kéo AOV &amp; doanh thu ngành hàng</h1>
+    <div class="standfirst">
+      <span><span class="tag">MỤC TIÊU</span></span>
+      <span>Doanh thu <b>24.170tr → 29.631tr</b> (+22,6%)</span>
+      <span>Khách <b>+19,4%</b></span>
+      <span>AOV tổng <b>232.818đ → 239.000đ</b></span>
+      <span>6 chương trình · <b>58 salon</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="inner" id="navInner">
+    <button data-tab="t0" class="active"><span class="n">00</span>Tổng quan</button>
+    <button data-tab="t1"><span class="n">01</span>Chi tiết chương trình</button>
+    <button data-tab="t2"><span class="n">02</span>Theo dõi chỉ số theo ngày</button>
+    <button data-tab="t3"><span class="n">03</span>Mục tiêu &amp; Lãi/lỗ theo salon</button>
+    <button data-tab="t4"><span class="n">04</span>Checklist triển khai</button>
+    <button data-tab="t5"><span class="n">05</span>Kéo khách Bố &amp; Con · Trung thu</button>
+  </div>
+</nav>
+
+<!-- ============ STATS ============ -->
+<div class="body">
+<div class="inner">
+
+<!-- ============ TAB 0 · TỔNG QUAN ============ -->
+<div class="tab active" id="t0">
+  <div class="lead">
+    <p><span class="first">Pharma Bio</span> là động lực chính kéo AOV và doanh thu ngành hàng tháng 8.</p>
+    <div class="dek">Sáu chương trình được thiết kế theo hai vai trò rõ ràng: <b>ba chương trình tặng quà</b> để nâng bill Relax &amp; UND (khách làm dịch vụ được tặng sản phẩm), và <b>ba chương trình đẩy doanh thu sản phẩm</b> (bán trực tiếp bộ Pharma Bio với lãi gộp cao). Toàn bộ mục tiêu đã bổ đến từng salon, theo dõi từng chỉ số theo ngày, và có checklist triển khai đến từng đầu việc.</div>
+  </div>
+
+  <section class="section first">
+    <div class="head"><span class="num">·</span><div><h2>Bức tranh mục tiêu tháng 8</h2><span class="sub">Toàn hệ thống 58 salon · so với thực hiện tháng 7 (cơ sở tính chương trình).</span></div></div>
+    <div class="body-col">
+      <div class="tbl"><table>
+        <thead><tr><th>Chỉ số toàn hệ thống</th><th class="num">Thực hiện T7 <span class="tagsrc">D</span></th><th class="num">Mục tiêu T8</th><th class="num">Chênh</th></tr></thead>
+        <tbody>
+          <tr><td>Khách</td><td class="num">103.817</td><td class="num">123.978</td><td class="num">+19,4%<span class="rd s"></span></td></tr>
+          <tr><td>Doanh thu (cả VAT)</td><td class="num">24.170tr</td><td class="num">29.631tr</td><td class="num">+5.461tr · +22,6%<span class="rd s"></span></td></tr>
+          <tr><td>AOV tổng / khách</td><td class="num">232.818đ</td><td class="num">239.000đ</td><td class="num">+6.182đ · +2,7%<span class="rd m"></span></td></tr>
+          <tr><td>AOV ngành Relax</td><td class="num">126.595đ</td><td class="num">128.499đ</td><td class="num">+1.904đ<span class="rd m"></span></td></tr>
+          <tr><td>AOV ngành UND</td><td class="num">30.037đ</td><td class="num">30.494đ</td><td class="num">+457đ<span class="rd w"></span></td></tr>
+          <tr><td>AOV ngành Sản phẩm</td><td class="num">12.788đ</td><td class="num">15.187đ</td><td class="num">+2.399đ · +18,8%<span class="rd s"></span></td></tr>
+        </tbody>
+      </table></div>
+      <blockquote>Riêng Pharma đóng góp <b>+3.835đ AOV tổng/khách</b> — trong đó +2.399đ vào ngành Sản phẩm, +1.208đ vào Relax, +199đ vào UND. Đây là phần AOV không chương trình nào khác tạo ra được.</blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><span class="num">·</span><div><h2>Sáu chương trình — hai vai trò</h2><span class="sub">Lãi gộp/đơn và doanh thu mục tiêu tháng (58 salon). Chi tiết điều kiện xem tab “Chi tiết chương trình”.</span></div></div>
+    <div class="body-col">
+      <div class="tbl"><table>
+        <thead><tr><th>Chương trình</th><th>Vai trò</th><th class="num">Đơn/tháng</th><th class="num">LG/đơn</th><th class="num">Lãi gộp/tháng</th><th class="num">Doanh thu/tháng</th></tr></thead>
+        <tbody>
+          <tr><td>UND tặng Serum</td><td>Kéo bill UND</td><td class="num">269</td><td class="num">174.600đ</td><td class="num">46,97tr</td><td class="num">169,5tr</td></tr>
+          <tr><td>Upsale Combo 4/5 tặng quà</td><td>Kéo bill Relax</td><td class="num">1.150</td><td class="num">111.500đ</td><td class="num">128,23tr</td><td class="num">460,0tr</td></tr>
+          <tr><td>Gội trải nghiệm tặng Serum</td><td>Kéo bill Relax</td><td class="num">398</td><td class="num">195.498đ</td><td class="num">77,81tr</td><td class="num">265,3tr</td></tr>
+          <tr><td>Mua Serum tặng 1 quà</td><td>Đẩy DT Sản phẩm</td><td class="num">1.037</td><td class="num">421.750đ</td><td class="num">437,35tr</td><td class="num">721,8tr</td></tr>
+          <tr><td>Trọn bộ giảm 40%</td><td>Đẩy DT Sản phẩm</td><td class="num">313</td><td class="num">542.500đ</td><td class="num">169,80tr</td><td class="num">300,5tr</td></tr>
+          <tr><td>Trong uống ngoài xịt</td><td>Đẩy DT Sản phẩm</td><td class="num">313</td><td class="num">352.500đ</td><td class="num">110,33tr</td><td class="num">187,8tr</td></tr>
+          <tr class="total"><td>TỔNG</td><td>—</td><td class="num">3.480</td><td class="num">—</td><td class="num">970,49tr</td><td class="num">2.104,8tr</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note-sm">Lãi gộp của 3 chương trình tặng quà (UND tặng Serum, Upsale Combo, Gội trải nghiệm) đã bao gồm phần lợi nhuận dịch vụ salon VỐN ĐÃ CÓ — không phải phần tăng thuần từ chương trình. Tab 03 theo dõi bill gắn camp, doanh thu phát sinh và lãi/lỗ thực đến từng salon.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><span class="num">·</span><div><h2>Chương trình kéo khách theo mùa — Bố &amp; Con “Săn khủng long” <span class="pill hot">Trung thu sớm</span></h2><span class="sub">Chương trình phủ khu vực miền Nam · song hành cùng 6 chương trình Pharma để kéo lưu lượng khách bố dẫn con đến salon.</span></div></div>
+    <div class="body-col">
+      <blockquote>Bố dẫn con đến salon → con được tặng ngay <b>1 mảnh ghép khủng long</b>. Con phát sinh bill dịch vụ → tặng thêm <b>1 mảnh nữa</b>. Bộ sưu tập <b>12 khủng long</b> — lý do để bố con quay lại gom đủ.</blockquote>
+      <div class="kbox">
+        <div class="kb"><div class="kv">Miền Nam</div><div class="kl">Khu vực triển khai · các salon vùng Nam</div></div>
+        <div class="kb"><div class="kv">2 tầng quà</div><div class="kl">Đến = 1 mảnh · phát sinh bill = +1 mảnh</div></div>
+        <div class="kb"><div class="kv">12 món</div><div class="kl">Bộ sưu tập khủng long — mục tiêu cho các con săn đủ</div></div>
+        <div class="kb"><div class="kv">Trung thu</div><div class="kl">Kịch bản kéo khách bố–con dịp Trung thu sớm</div></div>
+      </div>
+      <p class="note-sm">Chi tiết cơ chế, bộ 12 khủng long, kịch bản 4 bước và mục tiêu đến từng salon miền Nam xem tab <b>05 · Kéo khách Bố &amp; Con</b>.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TAB 1 · CHI TIẾT CHƯƠNG TRÌNH ============ -->
+<div class="tab" id="t1">
+  <div class="lead">
+    <p><span class="first">Chi tiết triển khai</span> — trình bày để nắm nhanh và thuyết trình.</p>
+    <div class="dek">Mỗi chương trình gói gọn trong một thẻ: điều kiện áp dụng, quà khách nhận, doanh thu ghi nhận, chi phí vốn hàng + quà, và lãi gộp/đơn. Hai nhóm màu phân biệt vai trò.</div>
+  </div>
+
+  <section class="section first">
+    <div class="body-col" style="grid-column:1/-1;">
+      <div class="fam-h"><span class="lbl">Nhóm 1 · Tặng quà</span><h3>Ba chương trình tặng quà — kéo bill Relax &amp; UND</h3><span class="tail">Khách làm dịch vụ được tặng sản phẩm → nâng AOV ngành dịch vụ</span></div>
+      <div class="cards">
+        <div class="card g">
+          <div class="ch"><div class="tt">UND tặng Serum</div><div class="st">Kéo bill UND</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Bill dịch vụ <b>UND ≥ 630.000đ</b></span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">01 <b>Serum Ngưu Bàng</b> (696.000đ) — tặng free</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">630.000đ (doanh thu dịch vụ UND)</span></div>
+            <div class="row"><span class="k">Vốn quà</span><span class="val">184.500đ (vốn 1 Serum)</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val">Ăn vào CT “Mua Serum tặng quà” — <b>không chào bán Serum</b> cho khách đã đủ điều kiện UND.</span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Anh làm gói UND này bên em <b>tặng anh Serum Ngưu Bàng</b> — sản phẩm <b>bảo vệ da đầu, làm sạch và giúp chắc khỏe nang tóc, ngừa gãy rụng</b>. Anh chỉ cần bill dịch vụ từ 630k là nhận free ngay.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag und">Stylist · UND</span></div>Stylist chốt tại ghế khi tư vấn gói UND.</span></div>
+          </div>
+          <div class="foot"><div class="lng">174.600đ<small> LG/đơn</small></div><div class="bin">Biên 27,7%<br>269 đơn/tháng</div></div>
+        </div>
+        <div class="card g">
+          <div class="ch"><div class="tt">Upsale Combo 4/5 tặng quà</div><div class="st">Kéo bill Relax</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Nâng lên <b>Combo 4 hoặc 5</b> (doanh thu ≥ 400.000đ)</span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">01 Dầu gội <b>HOẶC</b> 01 Kem ủ-xả (452.000đ)</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">400.000đ (doanh thu Relax)</span></div>
+            <div class="row"><span class="k">Vốn quà</span><span class="val">116.500đ (vốn 1 Dầu gội / Kem ủ-xả)</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val">Dễ triển khai, clear-stock. Là chương trình <b>gánh doanh thu Relax lớn nhất</b> (460tr/tháng).</span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Combo mình đang làm em nâng lên <b>Combo 4/5 (chăm da/gội cao cấp)</b>, chỉ thêm chút xíu là <b>tặng anh nguyên chai Dầu gội hoặc Kem ủ-xả Ngưu Bàng</b> mang về dùng — vừa đã tại salon vừa có đồ chăm tóc ở nhà.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag relax">Skinner · Relax</span><span class="postag relax">Supporter · Relax</span></div>Skinner/Supporter gợi nâng combo khi khách đang trải nghiệm.</span></div>
+          </div>
+          <div class="foot"><div class="lng">111.500đ<small> LG/đơn</small></div><div class="bin">Biên 27,9%<br>1.150 đơn/tháng</div></div>
+        </div>
+        <div class="card g">
+          <div class="ch"><div class="tt">Gội trải nghiệm tặng Serum</div><div class="st">Kéo bill Relax</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Làm gói <b>Gội trải nghiệm 75p / 90p / 115p</b></span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">01 <b>Serum Ngưu Bàng</b> (696.000đ) — tặng free</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">666.663đ (doanh thu Relax)</span></div>
+            <div class="row"><span class="k">Vốn quà</span><span class="val">184.500đ (vốn 1 Serum)</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val">Chạy song song CT tặng UND. Nâng trải nghiệm gội cao cấp.</span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Hôm nay em mời anh trải nghiệm <b>gói Gội cao cấp 75/90/115 phút</b> — thư giãn sâu, và <b>tặng anh 1 Serum Ngưu Bàng</b> chăm da đầu, chắc khỏe nang tóc mang về. Trải nghiệm 1 lần là mê luôn.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag relax">Skinner · Relax</span><span class="postag relax">Supporter · Relax</span></div>Skinner mời gói gội trải nghiệm ngay khi đón khách.</span></div>
+          </div>
+          <div class="foot"><div class="lng">195.498đ<small> LG/đơn</small></div><div class="bin">Biên 29,3%<br>398 đơn/tháng</div></div>
+        </div>
+      </div>
+
+      <div class="fam-h"><span class="lbl b">Nhóm 2 · Bán sản phẩm</span><h3>Ba chương trình đẩy doanh thu sản phẩm — lãi gộp cao</h3><span class="tail">Bán trực tiếp bộ Pharma Bio → AOV ngành Sản phẩm</span></div>
+      <div class="cards">
+        <div class="card">
+          <div class="ch"><div class="tt">Mua Serum tặng 1 quà</div><div class="st">Đẩy DT Sản phẩm</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Mua 01 <b>Serum</b> 696.000đ</span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">Serum + <b>01 quà tự chọn</b>: Viên uống Doctor Bio / Dầu gội / Kem ủ-xả</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">696.000đ (doanh thu Sản phẩm)</span></div>
+            <div class="row"><span class="k">Vốn hàng+quà</span><span class="val">274.250đ</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val"><b>Chỉ tặng 01 quà / 01 bill.</b> Dễ bán với nhân sự. Chương trình chủ lực về LG.</span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Anh lấy 1 <b>Serum Ngưu Bàng</b> chăm da đầu ngừa gãy rụng, bên em <b>tặng kèm 1 quà tự chọn</b>: Viên uống Doctor Bio, Dầu gội hoặc Kem ủ-xả. Mua 1 được 2, dùng cả tháng.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag sp">Stylist · SP</span><span class="postag sp">Skinner · SP</span></div>Chốt tại ghế cắt hoặc quầy lễ tân khi thanh toán.</span></div>
+          </div>
+          <div class="foot"><div class="lng">421.750đ<small> LG/đơn</small></div><div class="bin">Biên 60,6%<br>1.037 đơn/tháng</div></div>
+        </div>
+        <div class="card">
+          <div class="ch"><div class="tt">Trọn bộ giảm 40%</div><div class="st">Đẩy DT Sản phẩm</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Mua cả <b>3 sản phẩm</b></span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">Dầu gội + Kem ủ-xả + Serum (giá bộ 960.000đ)</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">960.000đ (doanh thu Sản phẩm)</span></div>
+            <div class="row"><span class="k">Vốn hàng+quà</span><span class="val">417.500đ</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val">Ưu tiên upsale ở khu vực bán tốt. <b>Giá trị đơn cao nhất.</b></span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Anh dùng đủ bộ <b>Dầu gội + Kem ủ-xả + Serum Ngưu Bàng</b> mới chăm được trọn quy trình: làm sạch – dưỡng – bảo vệ. Lấy trọn bộ hôm nay <b>giảm luôn 40%</b>, tiết kiệm hơn mua lẻ nhiều.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag sp">Stylist · SP</span></div>Ưu tiên khách đã từng mua lẻ Pharma (lễ tân tra lịch sử bill).</span></div>
+          </div>
+          <div class="foot"><div class="lng">542.500đ<small> LG/đơn</small></div><div class="bin">Biên 56,5%<br>313 đơn/tháng</div></div>
+        </div>
+        <div class="card">
+          <div class="ch"><div class="tt">Trong uống ngoài xịt</div><div class="st">Đẩy DT Sản phẩm</div></div>
+          <div class="cb">
+            <div class="row"><span class="k">Điều kiện</span><span class="val">Mua combo <b>Serum + Viên uống</b></span></div>
+            <div class="row"><span class="k">Khách nhận</span><span class="val">Serum + Viên uống Doctor Bio (giá lẻ 1.046.000đ)</span></div>
+            <div class="row"><span class="k">DT ghi nhận</span><span class="val">600.000đ (doanh thu Sản phẩm)</span></div>
+            <div class="row"><span class="k">Vốn hàng+quà</span><span class="val">247.500đ</span></div>
+            <div class="row"><span class="k">Lưu ý</span><span class="val">Cơ hội đẩy <b>Doctor Bio</b> qua kịch bản bán. Trùng CT bán Serum.</span></div>
+            <div class="row scr"><span class="k">Kịch bản</span><span class="val">“Chăm tóc chắc khỏe phải <b>trong uống ngoài xịt</b>: <b>Viên uống Doctor Bio</b> nuôi tóc từ bên trong + <b>Serum Ngưu Bàng</b> bảo vệ da đầu bên ngoài. Combo này hợp nhất với anh đang gãy rụng nhiều.”</span></div>
+            <div class="row pos"><span class="k">Vị trí</span><span class="val"><div class="pos-tags"><span class="postag sp">Stylist · SP</span></div>Nhắm khách có dấu hiệu rụng tóc, hói nhẹ.</span></div>
+          </div>
+          <div class="foot"><div class="lng">352.500đ<small> LG/đơn</small></div><div class="bin">Biên 58,8%<br>313 đơn/tháng</div></div>
+        </div>
+      </div>
+
+      <div class="fam-h"><span class="lbl b">Nguyên tắc</span><h3>Quy tắc vận hành bắt buộc</h3></div>
+      <div class="tbl"><table>
+        <thead><tr><th style="width:38px">#</th><th>Nguyên tắc</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Mỗi khách chỉ áp dụng <b>duy nhất 1 chương trình</b> trong cùng một lượt. Không cộng dồn, không chồng quà, không tách bill.</td></tr>
+          <tr><td>2</td><td>“Mua Serum tặng quà” <b>chỉ tặng 01 quà / 01 bill.</b> Khách chọn 1 trong 3: Viên uống Doctor Bio, Dầu gội, hoặc Kem ủ-xả.</td></tr>
+          <tr><td>3</td><td>Lễ tân <b>tra lịch sử bill</b> lúc check-in. Khách đã từng mua Pharma Bio → ưu tiên nhánh bán sản phẩm (Nhóm 2).</td></tr>
+          <tr><td>4</td><td>“UND tặng Serum” ăn vào “Mua Serum tặng quà” — khách bill UND ≥ 630k được tặng free đúng chai Serum. <b>Tuyệt đối không chào bán Serum</b> cho khách UND đủ điều kiện.</td></tr>
+          <tr><td>5</td><td>Động lực nhân sự: đạt doanh thu Pharma Bio + Doctor Bio từ <b>4.000.000đ/tuần</b> → toàn bộ TIP các đơn Pharma/Doctor Bio tuần đó <b>tăng 50%.</b></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TAB 2 · THEO DÕI CHỈ SỐ THEO NGÀY ============ -->
+<div class="tab" id="t2">
+  <div class="lead">
+    <p><span class="first">Theo dõi theo ngày</span> — CR &amp; Bill size từng ngành, đỏ khi chưa đạt.</p>
+    <div class="dek">Mục tiêu tháng đã chia đều theo ngày cho từng chỉ số. Chọn ngày, nhập số thực hiện vào ô — ô nào <b style="color:var(--red)">chưa đạt mục tiêu sẽ tự tô đỏ</b>. Số dòng “Mục tiêu” (nhỏ, phía trên) là ngưỡng cần đạt trong ngày. Dữ liệu lưu ngay trên trình duyệt theo từng ngày.</div>
+  </div>
+  <div class="ctrlbar">
+    <label>Ngày (tháng 8):</label>
+    <select id="daySel"></select>
+    <label style="margin-left:8px">Vùng:</label>
+    <select id="regSel"><option value="">Tất cả</option><option>Bắc</option><option>Trung</option><option>Nam</option></select>
+    <button class="btn" id="fillDemo">Điền dữ liệu mẫu 1 ngày</button>
+    <button class="btn ghost" id="clearDay">Xóa ngày này</button>
+    <span class="hint" id="dayStat"></span>
+  </div>
+  <div class="tbl">
+    <table id="metTbl">
+      <thead>
+        <tr>
+          <th rowspan="2">Salon</th><th rowspan="2">Vùng</th>
+          <th colspan="3" class="grp ctr">CR theo ngành (%) — thực hiện / mục tiêu</th>
+          <th colspan="3" class="grp ctr">Bill size theo ngành (đ) — thực hiện / mục tiêu</th>
+        </tr>
+        <tr>
+          <th class="num">CR Relax</th><th class="num">CR UND</th><th class="num">CR SP</th>
+          <th class="num">BS Relax</th><th class="num">BS UND</th><th class="num">BS SP</th>
+        </tr>
+      </thead>
+      <tbody id="metBody"></tbody>
+    </table>
+  </div>
+  <p class="metfoot"><b>Cách đọc:</b> CR = tỷ lệ khách dùng ngành đó (%). Bill size = giá trị bình quân/khách của ngành (đ). Vì CR &amp; Bill size là chỉ số bình quân, mục tiêu ngày = mục tiêu tháng của chỉ số. Khi bạn đẩy số thực tế lên, chỉ cần dán vào cột thực hiện — hệ thống tự so mục tiêu và tô đỏ ngày chưa đạt. Nút “Điền dữ liệu mẫu 1 ngày” dùng để demo cách tô màu khi thuyết trình.</p>
+
+  <section class="section">
+    <div class="head"><span class="num">·</span><div><h2>Số tuyệt đối theo ngày — dịch vụ, khách theo ngành</h2><span class="sub">Đi kèm bảng CR/Bill size ở trên: theo dõi <b>số lượt dịch vụ tuyệt đối</b> và <b>số khách tuyệt đối</b> của mỗi ngành, cùng <b>tổng khách tại salon</b> trong ngày. Cùng ngày &amp; vùng đang chọn ở trên. Ô chưa đạt mục tiêu ngày tự tô đỏ.</span></div></div>
+    <div class="body-col" style="grid-column:1/-1;">
+      <div class="tbl">
+        <table id="absTbl">
+          <thead>
+            <tr>
+              <th rowspan="2">Salon</th><th rowspan="2">Vùng</th>
+              <th rowspan="2" class="num">Tổng khách<br>salon</th>
+              <th colspan="3" class="grp ctr">Nhân sự chạy chương trình</th>
+              <th colspan="3" class="grp ctr">Số dịch vụ tuyệt đối theo ngành</th>
+              <th colspan="3" class="grp ctr">Số khách tuyệt đối theo ngành</th>
+            </tr>
+            <tr>
+              <th class="num">NS có bill CT</th><th class="num">Tổng NS</th><th class="num">% NS chạy CT</th>
+              <th class="num">DV Relax</th><th class="num">DV UND</th><th class="num">DV SP</th>
+              <th class="num">KH Relax</th><th class="num">KH UND</th><th class="num">KH SP</th>
+            </tr>
+          </thead>
+          <tbody id="absBody"></tbody>
+        </table>
+      </div>
+      <p class="metfoot"><b>Mục tiêu ngày:</b> Tổng khách/ngày = KH tháng ÷ 31. Số khách ngành = tổng khách ngày × CR mục tiêu của ngành. Số dịch vụ ngành lấy mốc tối thiểu = số khách ngành (≥ 1 dịch vụ/khách). <b>% NS chạy CT</b> = Số nhân sự có phát sinh bill có chương trình ÷ Tổng số nhân sự trong ngày (tự tính khi nhập 2 ô; xanh khi ≥ 70%, đỏ khi thấp) — cho biết chương trình đã lan tới bao nhiêu % đội ngũ hay chỉ vài người chạy. Đối chiếu <b>Số dịch vụ ÷ Số khách</b> của một ngành cho biết mỗi khách làm mấy dịch vụ (đòn bẩy Bill size); <b>Số khách ngành ÷ Tổng khách</b> chính là CR thực tế.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="head"><span class="num">·</span><div><h2>Đào sâu nguyên nhân — vì sao chưa đạt?</h2><span class="sub">CR &amp; Bill size chỉ cho biết “có/không đạt”, chưa cho biết “vì sao”. Mỗi chỉ số bóc tách được thành các chỉ số con để tìm đúng gốc rễ.</span></div></div>
+    <div class="body-col" style="grid-column:1/-1;">
+      <div class="tbl"><table>
+        <thead><tr><th style="width:120px">Chỉ số gốc</th><th>Bóc tách thành</th><th>Câu hỏi chẩn đoán</th></tr></thead>
+        <tbody>
+          <tr><td>CR ngành ↓</td><td><b>CR = Số bill ngành ÷ Tổng khách.</b> Tách: (a) tỷ lệ được <b>tư vấn/chào</b> ngành đó, (b) tỷ lệ chào → <b>chốt</b> (conversion), (c) CR theo <b>ca / khung giờ</b>, (d) CR theo <b>từng nhân sự</b>.</td><td>Chưa đạt vì <b>ít khách được chào</b> hay <b>chào nhưng không chốt</b>? Rơi vào ca nào, ai?</td></tr>
+          <tr><td>Bill size ngành ↓</td><td><b>BS = Doanh thu ngành ÷ Số bill ngành.</b> Tách: (a) <b>cơ cấu mặt hàng</b> (combo 3/4/5, hạng dịch vụ), (b) <b>tỷ lệ upsale/kèm SP</b>, (c) <b>% giảm giá/voucher</b> bình quân, (d) giá bình quân từng nhóm.</td><td>Bill nhỏ vì khách <b>chọn gói thấp</b>, <b>không upsale</b>, hay <b>giảm giá nhiều</b>?</td></tr>
+          <tr><td>Khách ↓</td><td>Tách theo <b>khách mới / khách quay lại</b>, <b>nguồn</b> (app, vãng lai, booking), <b>tỷ lệ huỷ/no-show</b>, khách theo khung giờ.</td><td>Thiếu khách là do <b>mới</b> hay <b>quay lại</b>? Huỷ lịch nhiều không?</td></tr>
+          <tr><td>CR/BS Sản phẩm ↓</td><td><b>Attach rate</b> (SP/bill), <b>tồn kho</b> Serum/Dầu gội/Viên uống, <b>tỷ lệ nghiệm thu kịch bản</b>, tỷ lệ đơn Pharma/nhân sự.</td><td>Bán ít SP vì <b>hết hàng</b>, <b>chưa thuộc kịch bản</b>, hay <b>không chào</b>?</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note-sm">Nguyên tắc: mỗi chỉ số bình quân (CR, BS) luôn tách được thành <b>“mẫu số × chất lượng”</b> — số lần được chào (mẫu số) và tỷ lệ chốt/giá trị mỗi lần (chất lượng). Khi 1 ngày đỏ, đi từ trên xuống: đủ khách chưa → có được chào không → chào có chốt không → chốt có upsale/đúng gói không.</p>
+
+      <div class="fam-h"><span class="lbl">Quy trình E</span><h3>Quy trình đọc 1 ngày “đỏ” — đi từ trên xuống</h3><span class="tail">Dừng ở bước đầu tiên phát hiện lệch</span></div>
+      <div class="steps s5">
+        <div class="step"><span class="sn">1</span><div class="stt">Đủ khách chưa?</div><div class="sds">Xem <b>Tổng khách salon</b> (bảng số tuyệt đối) so mục tiêu ngày. Thiếu → soi khách <b>mới/quay lại</b>, huỷ lịch/no-show, khung giờ vắng. <span style="color:var(--mute)">→ vấn đề lưu lượng, không phải bán hàng.</span></div></div>
+        <div class="step"><span class="sn">2</span><div class="stt">Khách có được chào?</div><div class="sds">Đủ khách nhưng <b>CR ngành thấp</b> → kiểm tra <b>offer rate</b>: khách có được tư vấn ngành đó không. Soi theo <b>nhân sự &amp; ca</b>. <span style="color:var(--mute)">→ vấn đề quy trình chào bán.</span></div></div>
+        <div class="step"><span class="sn">3</span><div class="stt">Chào có chốt?</div><div class="sds">Được chào nhưng không lên bill → <b>conversion thấp</b>. Ghi <b>lý do từ chối</b> (giá / không nhu cầu / vội). <span style="color:var(--mute)">→ vấn đề kịch bản, nghiệm thu đào tạo.</span></div></div>
+        <div class="step"><span class="sn">4</span><div class="stt">Chốt đúng gói / có upsale?</div><div class="sds">CR đạt nhưng <b>Bill size thấp</b> → soi <b>cơ cấu combo 3/4/5</b>, <b>attach rate SP/bill</b>, <b>% giảm giá</b>. <span style="color:var(--mute)">→ vấn đề upsale &amp; chiết khấu.</span></div></div>
+        <div class="step"><span class="sn">5</span><div class="stt">Khoanh ai / ca nào?</div><div class="sds">Đã biết “lỗi ở đâu” → khoanh <b>nhân sự × khung giờ × salon</b> để giao việc đúng người. Thiếu hàng? kiểm <b>tồn kho</b> (checklist). <span style="color:var(--mute)">→ hành động cụ thể trong ngày.</span></div></div>
+      </div>
+      <p class="note-sm"><b>Cách dùng nhanh:</b> ngày nào có ô đỏ ở bảng CR/Bill size, đối chiếu ngay bảng số tuyệt đối bên dưới để biết đang lệch ở <b>mẫu số (khách)</b> hay <b>chất lượng (chốt/giá trị)</b>, rồi chạy 5 bước trên. Dừng lại ở bước đầu tiên thấy lệch — đó là gốc rễ cần xử lý.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TAB 3 · MỤC TIÊU & HOÀ VỐN THEO SALON ============ -->
+<div class="tab" id="t3">
+  <div class="lead">
+    <p><span class="first">Theo dõi lãi/lỗ chương trình</span> — mục tiêu quà là số fix theo tháng trước, đo đến từng salon.</p>
+    <div class="dek">Mỗi chương trình: <b>Mục tiêu quà (suất)</b> là con số <b>cố định theo dữ liệu tháng trước</b> — không phụ thuộc dự kiến bán. Khi bill gắn camp phát sinh, bạn nhập <b>số bill</b> và <b>doanh thu phát sinh</b>; hệ thống tự tính chi phí quà, lãi/lỗ thực và trạng thái. Đây chính là điểm hoà vốn: lãi/lỗ chuyển dương là chương trình đã có lãi.</div>
+  </div>
+
+  <div class="ctrlbar">
+    <label>Chương trình:</label>
+    <select id="progSel">
+      <option value="ct4">UND tặng Serum</option>
+      <option value="ct5">Upsale Combo tặng quà</option>
+      <option value="ct9">Gội trải nghiệm tặng Serum</option>
+      <option value="ct6">Mua Serum tặng 1 quà</option>
+      <option value="ct7">Trọn bộ giảm 40%</option>
+      <option value="ct8">Trong uống ngoài xịt</option>
+    </select>
+    <label style="margin-left:8px">Biên LN:</label>
+    <input type="number" id="marginIn" value="70" min="10" max="95" step="1" style="width:60px"> %
+    <label style="margin-left:8px">Vùng:</label>
+    <select id="regSel3"><option value="">Tất cả</option><option>Bắc</option><option>Trung</option><option>Nam</option></select>
+    <button class="btn ghost" id="clearProg">Xóa số đã nhập</button>
+  </div>
+
+  <div class="campcard">
+    <div class="cch"><h3 id="campTitle"></h3><span class="badge-ok">✓ Đã duyệt</span></div>
+    <div class="campcond" id="campCond"></div>
+  </div>
+
+  <div class="kbox3" id="kpi3"></div>
+  <div class="campctx" id="campCtx"></div>
+
+  <p class="note-sm" style="margin-bottom:2px"><b>Click ô Bill / DT để nhập số thực hiện của từng salon.</b> Cột Chi phí, Lãi/lỗ và Hiệu quả tự tính. Lãi/lỗ = DT phát sinh × biên LN − chi phí quà.</p>
+  <div class="tbl"><table id="salTbl">
+    <thead><tr>
+      <th>Salon</th><th>GĐKV</th>
+      <th class="num">MT quà<br>(suất)</th>
+      <th class="num">Bill gắn<br>camp</th>
+      <th class="num">DT phát<br>sinh (tr)</th>
+      <th class="num">Chi phí<br>quà (tr)</th>
+      <th class="num">Lãi/lỗ<br>(tr)</th>
+      <th class="ctr">Hiệu quả</th>
+    </tr></thead>
+    <tbody id="salBody"></tbody>
+  </table></div>
+  <p class="note-sm">“MT quà (suất)” = mục tiêu số suất quà cố định theo cơ sở tháng trước của từng salon (không đổi khi thay đổi dự kiến bán). Thanh tiến độ ở cột Bill thể hiện % bill đã gắn so với mục tiêu quà. Số bạn nhập được lưu trên trình duyệt theo từng chương trình.</p>
+</div>
+
+<!-- ============ TAB 4 · CHECKLIST ============ -->
+<div class="tab" id="t4">
+  <div class="lead">
+    <p><span class="first">Checklist triển khai</span> — từ salesup đến marketing, thiết kế, chăm sóc khách.</p>
+    <div class="dek">Mỗi đầu việc có <b>người phụ trách</b>, <b>thời gian hoàn thành</b> (chỉnh trực tiếp) và <b>ô tích nghiệm thu / sẵn sàng thực hiện</b>. Phần ấn phẩm cho Design được <b>tách riêng</b> để nhìn tổng thể. Trạng thái tự lưu trên trình duyệt.</div>
+  </div>
+  <div class="ctrlbar"><span class="hint" id="clStat"></span><button class="btn ghost" id="clReset" style="margin-left:auto">Bỏ tích toàn bộ</button></div>
+  <div id="clWrap"></div>
+</div>
+
+<!-- ============ TAB 5 · KÉO KHÁCH BỐ & CON ============ -->
+<div class="tab" id="t5">
+  <div class="lead">
+    <p><span class="first">Bố &amp; Con “Săn khủng long”</span> — chương trình kéo khách miền Nam dịp Trung thu sớm.</p>
+    <div class="dek">Chương trình cảm xúc, phủ khu vực <b>miền Nam</b>, kéo lưu lượng khách <b>bố dẫn con</b> đến salon và tạo lý do quay lại nhiều lần để <b>gom đủ bộ 12 khủng long</b>. Chạy song song 6 chương trình Pharma — bố cắt tóc/làm dịch vụ, con được chơi &amp; sưu tầm.</div>
+  </div>
+
+  <section class="section first">
+    <div class="body-col" style="grid-column:1/-1;">
+      <div class="fam-h"><span class="lbl">Cơ chế</span><h3>Hai tầng quà — đến là có, phát sinh bill là nhân đôi</h3><span class="tail">Mỗi bé nhận tối đa 2 mảnh/lượt</span></div>
+      <div class="mech">
+        <div class="mbox"><div class="mh">🦖 Tầng 1 · Bố dẫn con đến</div><div class="mp">Chỉ cần <b>bố đưa con tới salon</b> (bố làm dịch vụ), bé được tặng ngay <b>1 mảnh ghép khủng long</b>. Không điều kiện bill của con — hạ rào cản, kéo bố con vào salon.</div></div>
+        <div class="mbox b2"><div class="mh">🎁 Tầng 2 · Con phát sinh bill</div><div class="mp">Bé <b>làm thêm dịch vụ</b> (cắt tóc bé…) → tặng thêm <b>1 mảnh nữa</b>. Vừa tăng bill trẻ em, vừa cho bé lý do “được 2 con một lần”.</div></div>
+      </div>
+
+      <div class="fam-h"><span class="lbl b">Sưu tập</span><h3>Bộ 12 khủng long — mục tiêu để các con săn đủ</h3><span class="tail">Mỗi lần đến gom 1–2 mảnh → cần nhiều lần quay lại</span></div>
+      <div class="toyset" id="toySet"></div>
+      <p class="note-sm">Mỗi bé cần quay lại nhiều lần (hoặc rủ bạn) để đủ 12 con → tạo <b>tần suất quay lại</b> và <b>truyền miệng</b> trong nhóm phụ huynh. Gợi ý: phát <b>thẻ sưu tập</b> đóng dấu/tem mỗi con đã có, đủ 12 con tặng phần thưởng lớn (khủng long chúa / voucher gia đình).</p>
+      <div class="mbox b2" style="margin-top:12px"><div class="mh">🛒 Muốn đủ bộ sớm? Mua thêm 20.000đ/con</div><div class="mp">Bé nào nôn nóng sưu tầm đủ 12 con có thể <b>mua thêm mảnh còn thiếu với giá 20.000đ/con</b> ngay tại salon. Vừa chiều được bé, vừa tạo <b>một dòng doanh thu nhỏ bù chi phí đồ chơi</b>. Giá vốn ~8.000đ/con → mỗi con bán thêm lãi ~12.000đ. Ước tính doanh thu bán thêm ở bảng mục tiêu bên dưới.</div></div>
+
+      <div class="fam-h"><span class="lbl">Kịch bản</span><h3>Kịch bản kéo khách bố–con · Trung thu sớm</h3></div>
+      <div class="steps">
+        <div class="step"><span class="sn">1</span><div class="stt">Chạm &amp; mời</div><div class="sds">Notification + fanpage nhắm phụ huynh khu Nam: “Trung thu này, <b>bố cắt tóc — con săn khủng long</b>. Đưa bé đến 30Shine nhận quà ngay.” CTA đặt lịch cuối tuần.</div></div>
+        <div class="step"><span class="sn">2</span><div class="stt">Đón tại salon</div><div class="sds">Lễ tân chào bé, <b>trao ngay 1 mảnh + thẻ sưu tập</b>: “Con được 1 bạn khủng long nè, bộ có 12 bạn đó, con gom đủ nhận quà lớn!” Khơi mong muốn quay lại.</div></div>
+        <div class="step"><span class="sn">3</span><div class="stt">Upsell bill bé</div><div class="sds">Stylist gợi <b>cắt tóc/gội cho bé</b>: “Con làm tóc gọn đón Trung thu, được thêm 1 bạn khủng long nữa nha” → phát sinh bill trẻ em, tặng mảnh thứ 2.</div></div>
+        <div class="step"><span class="sn">4</span><div class="stt">Nhắc quay lại</div><div class="sds">CSKH nhắn bố: “Bé còn thiếu mấy bạn khủng long, cuối tuần đưa bé qua gom tiếp nha” + đồng bộ ưu đãi Pharma cho bố (Serum/combo).</div></div>
+      </div>
+
+      <div class="fam-h"><span class="lbl b">Vị trí</span><h3>Ai làm gì</h3></div>
+      <div class="tbl"><table>
+        <thead><tr><th>Vị trí</th><th>Vai trò trong chương trình</th></tr></thead>
+        <tbody>
+          <tr><td>Lễ tân</td><td>Đón bé, trao mảnh tầng 1 + thẻ sưu tập, giới thiệu bộ 12 con, khơi động lực sưu tầm.</td></tr>
+          <tr><td>Stylist</td><td>Upsell dịch vụ cho bé (cắt/gội trẻ em) để phát sinh bill → mảnh tầng 2. Đồng thời chốt Pharma cho bố.</td></tr>
+          <tr><td>Skinner / Supporter</td><td>Chăm sóc trải nghiệm để bố hài lòng, mở đường combo Relax/gội trải nghiệm.</td></tr>
+          <tr><td>CSKH</td><td>Nhắc bố đưa bé quay lại gom đủ bộ; theo dõi bé còn thiếu con nào.</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="fam-h"><span class="lbl">Mục tiêu</span><h3>Mục tiêu &amp; chi phí — đến từng salon miền Nam</h3></div>
+      <div class="ctrlbar">
+        <label>% bé/khách (mục tiêu):</label>
+        <input type="number" id="kidPct" value="8" min="1" max="30" step="1" style="width:56px"> %
+        <label style="margin-left:8px">Giá vốn 1 mảnh:</label>
+        <input type="number" id="toyCost" value="8000" min="1000" max="50000" step="500" style="width:76px"> đ
+        <label style="margin-left:8px">Mảnh/bé (bình quân):</label>
+        <input type="number" id="toyPer" value="1.5" min="1" max="2" step="0.1" style="width:56px">
+        <br>
+        <label>Giá bán thêm/con:</label>
+        <input type="number" id="toySell" value="20000" min="0" max="100000" step="1000" style="width:76px"> đ
+        <label style="margin-left:8px">% bé mua thêm:</label>
+        <input type="number" id="buyPct" value="15" min="0" max="80" step="1" style="width:52px"> %
+        <label style="margin-left:8px">Số con mua BQ:</label>
+        <input type="number" id="buyQty" value="3" min="1" max="12" step="1" style="width:52px">
+        <span class="hint" id="kidStat"></span>
+      </div>
+      <div class="tbl"><table id="kidTbl">
+        <thead><tr>
+          <th>Salon (miền Nam)</th><th>GĐKV</th><th class="num">KH T8</th>
+          <th class="num">MT số bé<br>đến</th><th class="num">MT mảnh<br>tặng</th>
+          <th class="num">Chi phí đồ chơi<br>dự kiến (tr)</th>
+          <th class="num">DT bán thêm<br>DK (tr)</th>
+          <th class="num">Chi phí<br>ròng (tr)</th>
+          <th class="num">Bé đến<br>(TH)</th><th class="num">Chi phí<br>thực (tr)</th>
+        </tr></thead>
+        <tbody id="kidBody"></tbody>
+      </table></div>
+      <p class="note-sm">Mục tiêu số bé = % bé/khách × KH T8 của salon. Mảnh tặng = số bé × mảnh/bé bình quân (bé đến nhận 1, bé có bill nhận 2). Chi phí = mảnh × giá vốn 1 mảnh. <b>DT bán thêm</b> = số bé × % bé mua thêm × số con mua BQ × giá bán/con. <b>Chi phí ròng</b> = chi phí đồ chơi − DT bán thêm (âm là chương trình tự bù được chi phí quà). Cột “Bé đến (TH)” để nhập số thực hiện.</p>
+    </div>
+  </section>
+</div>
+
+</div><!-- /inner -->
+</div><!-- /body -->
+
+<footer>
+  <div class="inner">
+    <div class="colophon">30SHINE · NGÀNH HÀNG · PHARMA T8/2026</div>
+    <div class="meta">Nguồn: Mục tiêu AOV ngành T8 (58 salon) · Bộ 6 chương trình Pharma Bio CT4–CT9 · Checklist CTKM. Dữ liệu chỉ số theo ngày do người dùng cập nhật. Mô hình hoà vốn dùng biên lãi gộp dịch vụ điều chỉnh được.</div>
+  </div>
+</footer>
+
+<script>
+/* ====== DATA ====== */
+const SALONS = [{"stt":1,"gdkv":"Nguyễn Như Quỳnh","salon":"10 TP","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":2436,"dtT8":607.4,"aovT8":249350,"crSC":55.23,"crRelax":77.64,"crUND":9.2,"crSP":5.44,"bsSC":118000,"bsRelax":180906,"bsUND":324145,"bsSP":255300,"ct4":5,"ct5":18,"ct6":20,"ct7":6,"ct8":6,"ct9":11,"donSP":32,"dtSP":23.3},{"stt":2,"gdkv":"Nguyễn Như Quỳnh","salon":"11 PKT","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1308,"dtT8":284.7,"aovT8":217698,"crSC":62.49,"crRelax":59.49,"crUND":6.09,"crSP":3.12,"bsSC":111000,"bsRelax":201192,"bsUND":293202,"bsSP":345974,"ct4":2,"ct5":4,"ct6":11,"ct7":3,"ct8":3,"ct9":7,"donSP":17,"dtSP":12.3},{"stt":3,"gdkv":"Nguyễn Như Quỳnh","salon":"168 NVC","vung":"Bắc","salesup":"Nosalesup","khT8":3330,"dtT8":879.0,"aovT8":263959,"crSC":57.16,"crRelax":75.51,"crUND":9.81,"crSP":4.02,"bsSC":121000,"bsRelax":198288,"bsUND":295899,"bsSP":399244,"ct4":8,"ct5":34,"ct6":28,"ct7":8,"ct8":8,"ct9":20,"donSP":44,"dtSP":32.0},{"stt":4,"gdkv":"Nguyễn Như Quỳnh","salon":"186 QT","vung":"Bắc","salesup":"Nosalesup","khT8":751,"dtT8":162.2,"aovT8":216014,"crSC":61.82,"crRelax":57.63,"crUND":10.37,"crSP":4.95,"bsSC":112000,"bsRelax":172882,"bsUND":269277,"bsSP":388161,"ct4":2,"ct5":5,"ct6":6,"ct7":2,"ct8":2,"ct9":1,"donSP":10,"dtSP":7.3},{"stt":5,"gdkv":"Nguyễn Như Quỳnh","salon":"362 NGT BN","vung":"Bắc","salesup":"Nguyễn Thị Phương Anh","khT8":2964,"dtT8":735.3,"aovT8":248093,"crSC":56.13,"crRelax":71.18,"crUND":5.9,"crSP":5.86,"bsSC":112000,"bsRelax":211607,"bsUND":358018,"bsSP":230106,"ct4":5,"ct5":36,"ct6":25,"ct7":8,"ct8":8,"ct9":18,"donSP":41,"dtSP":29.9},{"stt":6,"gdkv":"Nguyễn Như Quỳnh","salon":"4 LQD BN","vung":"Bắc","salesup":"Nguyễn Thị Phương Anh","khT8":743,"dtT8":163.0,"aovT8":219382,"crSC":54.12,"crRelax":90.64,"crUND":4.02,"crSP":2.52,"bsSC":111000,"bsRelax":149608,"bsUND":353515,"bsSP":377043,"ct4":1,"ct5":2,"ct6":6,"ct7":2,"ct8":2,"ct9":6,"donSP":10,"dtSP":7.3},{"stt":7,"gdkv":"Nguyễn Thanh Sang","salon":"145 THT","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":4493,"dtT8":1098.2,"aovT8":244414,"crSC":61.46,"crRelax":69.52,"crUND":10.65,"crSP":6.36,"bsSC":111000,"bsRelax":183169,"bsUND":280167,"bsSP":299141,"ct4":9,"ct5":51,"ct6":36,"ct7":11,"ct8":11,"ct9":13,"donSP":58,"dtSP":42.2},{"stt":8,"gdkv":"Nguyễn Thanh Sang","salon":"190 HB","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":2014,"dtT8":430.3,"aovT8":213664,"crSC":60.23,"crRelax":68.83,"crUND":6.64,"crSP":4.17,"bsSC":112000,"bsRelax":151996,"bsUND":386343,"bsSP":380360,"ct4":3,"ct5":17,"ct6":16,"ct7":5,"ct8":5,"ct9":1,"donSP":26,"dtSP":18.9},{"stt":9,"gdkv":"Nguyễn Thanh Sang","salon":"312 LVS","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":3602,"dtT8":851.3,"aovT8":236340,"crSC":58.53,"crRelax":69.52,"crUND":8.13,"crSP":3.71,"bsSC":108000,"bsRelax":183133,"bsUND":384655,"bsSP":391176,"ct4":8,"ct5":31,"ct6":30,"ct7":9,"ct8":9,"ct9":12,"donSP":48,"dtSP":34.9},{"stt":10,"gdkv":"Nguyễn Thanh Sang","salon":"575 AC","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":2598,"dtT8":651.8,"aovT8":250878,"crSC":52.94,"crRelax":72.14,"crUND":9.52,"crSP":4.88,"bsSC":113000,"bsRelax":201990,"bsUND":284027,"bsSP":374345,"ct4":5,"ct5":46,"ct6":21,"ct7":6,"ct8":6,"ct9":3,"donSP":33,"dtSP":24.0},{"stt":11,"gdkv":"Nguyễn Thanh Sang","salon":"708 LTT","vung":"Nam","salesup":"Nosalesup","khT8":1484,"dtT8":344.7,"aovT8":232269,"crSC":61.72,"crRelax":66.74,"crUND":9.67,"crSP":3.41,"bsSC":111000,"bsRelax":172583,"bsUND":367499,"bsSP":382984,"ct4":4,"ct5":10,"ct6":12,"ct7":4,"ct8":4,"ct9":2,"donSP":20,"dtSP":14.6},{"stt":12,"gdkv":"Nguyễn Thanh Sang","salon":"730 TL10","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":3076,"dtT8":667.7,"aovT8":217072,"crSC":64.53,"crRelax":69.35,"crUND":5.78,"crSP":4.75,"bsSC":113000,"bsRelax":157928,"bsUND":351768,"bsSP":300522,"ct4":5,"ct5":26,"ct6":26,"ct7":8,"ct8":8,"ct9":6,"donSP":42,"dtSP":30.6},{"stt":13,"gdkv":"Nguyễn Thanh Sang","salon":"8 CVL","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":2934,"dtT8":693.6,"aovT8":236395,"crSC":64.8,"crRelax":64.5,"crUND":9.78,"crSP":5.78,"bsSC":109000,"bsRelax":178644,"bsUND":364977,"bsSP":257044,"ct4":8,"ct5":28,"ct6":25,"ct7":7,"ct8":7,"ct9":10,"donSP":39,"dtSP":28.3},{"stt":14,"gdkv":"Nguyễn Thanh Sang","salon":"927 HG","vung":"Nam","salesup":"Nosalesup","khT8":3567,"dtT8":919.6,"aovT8":257798,"crSC":46.72,"crRelax":79.84,"crUND":11.14,"crSP":7.2,"bsSC":114000,"bsRelax":180787,"bsUND":332149,"bsSP":321788,"ct4":9,"ct5":76,"ct6":31,"ct7":9,"ct8":9,"ct9":1,"donSP":49,"dtSP":35.6},{"stt":15,"gdkv":"Nguyễn Thanh Sang","salon":"99 TSN","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":3523,"dtT8":881.0,"aovT8":250074,"crSC":61.76,"crRelax":64.16,"crUND":14.59,"crSP":7.99,"bsSC":112000,"bsRelax":176984,"bsUND":373052,"bsSP":161879,"ct4":12,"ct5":29,"ct6":30,"ct7":9,"ct8":9,"ct9":7,"donSP":48,"dtSP":34.9},{"stt":16,"gdkv":"Nguyễn Thị Huệ","salon":"290 QT TH","vung":"Trung","salesup":"Nosalesup","khT8":1077,"dtT8":259.4,"aovT8":240851,"crSC":57.45,"crRelax":69.57,"crUND":6.38,"crSP":3.84,"bsSC":108000,"bsRelax":208805,"bsUND":316688,"bsSP":344529,"ct4":2,"ct5":4,"ct6":9,"ct7":3,"ct8":3,"ct9":4,"donSP":15,"dtSP":10.9},{"stt":17,"gdkv":"Nguyễn Thị Huệ","salon":"304 NT TH","vung":"Trung","salesup":"Nosalesup","khT8":783,"dtT8":181.6,"aovT8":231931,"crSC":63.81,"crRelax":66.88,"crUND":8.68,"crSP":3.35,"bsSC":112000,"bsRelax":163589,"bsUND":470298,"bsSP":305149,"ct4":2,"ct5":2,"ct6":7,"ct7":2,"ct8":2,"ct9":1,"donSP":11,"dtSP":8.0},{"stt":18,"gdkv":"Nguyễn Thị Huệ","salon":"58 NVC NA","vung":"Trung","salesup":"Nosalesup","khT8":1198,"dtT8":270.4,"aovT8":225747,"crSC":62.75,"crRelax":70.63,"crUND":5.67,"crSP":7.28,"bsSC":108000,"bsRelax":154004,"bsUND":447107,"bsSP":327677,"ct4":2,"ct5":3,"ct6":10,"ct7":3,"ct8":3,"ct9":1,"donSP":16,"dtSP":11.6},{"stt":19,"gdkv":"Nguyễn Thị Huệ","salon":"595 BT TH","vung":"Trung","salesup":"Nosalesup","khT8":885,"dtT8":213.4,"aovT8":241149,"crSC":49.09,"crRelax":73.42,"crUND":6.59,"crSP":4.52,"bsSC":111000,"bsRelax":214720,"bsUND":241524,"bsSP":289501,"ct4":1,"ct5":8,"ct6":7,"ct7":2,"ct8":2,"ct9":7,"donSP":11,"dtSP":8.0},{"stt":20,"gdkv":"Nguyễn Thị Huệ","salon":"68 LN NA","vung":"Trung","salesup":"Nosalesup","khT8":991,"dtT8":194.9,"aovT8":196689,"crSC":68.49,"crRelax":57.04,"crUND":3.57,"crSP":3.44,"bsSC":106000,"bsRelax":166342,"bsUND":412900,"bsSP":420577,"ct4":1,"ct5":8,"ct6":8,"ct7":3,"ct8":3,"ct9":0,"donSP":14,"dtSP":10.2},{"stt":21,"gdkv":"Nguyễn Thị Huệ","salon":"80 TP TH","vung":"Trung","salesup":"Nosalesup","khT8":1358,"dtT8":330.1,"aovT8":243084,"crSC":54.97,"crRelax":67.47,"crUND":4.6,"crSP":4.67,"bsSC":113000,"bsRelax":221600,"bsUND":315215,"bsSP":362858,"ct4":2,"ct5":7,"ct6":11,"ct7":3,"ct8":3,"ct9":10,"donSP":17,"dtSP":12.3},{"stt":22,"gdkv":"Nguyễn Việt Cường","salon":"103 TN","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":5267,"dtT8":1271.0,"aovT8":241312,"crSC":59.79,"crRelax":66.28,"crUND":8.6,"crSP":4.27,"bsSC":116000,"bsRelax":182702,"bsUND":407963,"bsSP":362603,"ct4":12,"ct5":30,"ct6":46,"ct7":14,"ct8":14,"ct9":13,"donSP":74,"dtSP":53.9},{"stt":23,"gdkv":"Nguyễn Việt Cường","salon":"1146 KVC","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":1259,"dtT8":308.8,"aovT8":245257,"crSC":41.61,"crRelax":87.32,"crUND":11.67,"crSP":5.45,"bsSC":111000,"bsRelax":157958,"bsUND":390364,"bsSP":285876,"ct4":4,"ct5":7,"ct6":11,"ct7":3,"ct8":3,"ct9":0,"donSP":17,"dtSP":12.3},{"stt":24,"gdkv":"Nguyễn Việt Cường","salon":"1371 PVT","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":1176,"dtT8":270.0,"aovT8":229553,"crSC":38.96,"crRelax":82.95,"crUND":4.78,"crSP":6.17,"bsSC":110000,"bsRelax":177945,"bsUND":386400,"bsSP":333811,"ct4":2,"ct5":13,"ct6":10,"ct7":3,"ct8":3,"ct9":0,"donSP":16,"dtSP":11.6},{"stt":25,"gdkv":"Nguyễn Việt Cường","salon":"255 NAN","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":2155,"dtT8":477.1,"aovT8":221394,"crSC":56.19,"crRelax":66.28,"crUND":7.94,"crSP":4.45,"bsSC":107000,"bsRelax":176912,"bsUND":393919,"bsSP":285945,"ct4":5,"ct5":8,"ct6":18,"ct7":5,"ct8":5,"ct9":1,"donSP":28,"dtSP":20.3},{"stt":26,"gdkv":"Nguyễn Việt Cường","salon":"29 HB","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":2217,"dtT8":516.0,"aovT8":232737,"crSC":45.59,"crRelax":80.32,"crUND":5.66,"crSP":5.07,"bsSC":108000,"bsRelax":182840,"bsUND":367822,"bsSP":311961,"ct4":3,"ct5":7,"ct6":19,"ct7":6,"ct8":6,"ct9":3,"donSP":31,"dtSP":22.6},{"stt":27,"gdkv":"Nguyễn Việt Cường","salon":"36 N1 BD","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":1429,"dtT8":370.1,"aovT8":259004,"crSC":34.2,"crRelax":94.37,"crUND":8.02,"crSP":7.02,"bsSC":109000,"bsRelax":190337,"bsUND":356879,"bsSP":192162,"ct4":3,"ct5":13,"ct6":12,"ct7":4,"ct8":4,"ct9":4,"donSP":20,"dtSP":14.6},{"stt":28,"gdkv":"Nguyễn Việt Cường","salon":"401/1 NDT","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":1511,"dtT8":304.1,"aovT8":201258,"crSC":59.7,"crRelax":64.14,"crUND":4.02,"crSP":4.43,"bsSC":108000,"bsRelax":163895,"bsUND":438804,"bsSP":316642,"ct4":2,"ct5":9,"ct6":13,"ct7":4,"ct8":4,"ct9":0,"donSP":21,"dtSP":15.3},{"stt":29,"gdkv":"Nguyễn Việt Cường","salon":"451 PVT","vung":"Nam","salesup":"Nosalesup","khT8":812,"dtT8":178.8,"aovT8":220166,"crSC":45.59,"crRelax":79.91,"crUND":4.98,"crSP":3.21,"bsSC":106000,"bsRelax":172780,"bsUND":425595,"bsSP":391766,"ct4":1,"ct5":3,"ct6":7,"ct7":2,"ct8":2,"ct9":0,"donSP":11,"dtSP":8.0},{"stt":30,"gdkv":"Nguyễn Việt Cường","salon":"80 PL BD","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":2355,"dtT8":568.6,"aovT8":241435,"crSC":44.8,"crRelax":86.93,"crUND":7.91,"crSP":6.11,"bsSC":107000,"bsRelax":171402,"bsUND":360941,"bsSP":261144,"ct4":5,"ct5":10,"ct6":19,"ct7":6,"ct8":6,"ct9":4,"donSP":31,"dtSP":22.6},{"stt":31,"gdkv":"Phan Thị Hồng Gấm","salon":"148 TD","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1144,"dtT8":247.3,"aovT8":216163,"crSC":57.63,"crRelax":67.36,"crUND":10.52,"crSP":2.07,"bsSC":111000,"bsRelax":170064,"bsUND":274019,"bsSP":426144,"ct4":2,"ct5":10,"ct6":10,"ct7":3,"ct8":3,"ct9":1,"donSP":16,"dtSP":11.6},{"stt":32,"gdkv":"Phan Thị Hồng Gấm","salon":"173 TN","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1964,"dtT8":435.8,"aovT8":221871,"crSC":54.1,"crRelax":72.6,"crUND":9.17,"crSP":3.54,"bsSC":110000,"bsRelax":173669,"bsUND":247671,"bsSP":382867,"ct4":3,"ct5":25,"ct6":17,"ct7":5,"ct8":5,"ct9":6,"donSP":27,"dtSP":19.6},{"stt":33,"gdkv":"Phan Thị Hồng Gấm","salon":"202 DC","vung":"Bắc","salesup":"Nosalesup","khT8":2283,"dtT8":551.5,"aovT8":241567,"crSC":60.69,"crRelax":63.59,"crUND":12.33,"crSP":2.92,"bsSC":114000,"bsRelax":193537,"bsUND":303476,"bsSP":407615,"ct4":6,"ct5":20,"ct6":19,"ct7":6,"ct8":6,"ct9":7,"donSP":31,"dtSP":22.6},{"stt":34,"gdkv":"Phan Thị Hồng Gấm","salon":"264 LLQ","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1860,"dtT8":441.6,"aovT8":237420,"crSC":63.67,"crRelax":63.92,"crUND":9.31,"crSP":5.26,"bsSC":108000,"bsRelax":198218,"bsUND":284548,"bsSP":293897,"ct4":4,"ct5":10,"ct6":15,"ct7":5,"ct8":5,"ct9":11,"donSP":25,"dtSP":18.2},{"stt":35,"gdkv":"Phan Thị Hồng Gấm","salon":"346 KT","vung":"Bắc","salesup":"Nosalesup","khT8":1689,"dtT8":394.8,"aovT8":233742,"crSC":59.48,"crRelax":70.16,"crUND":14.97,"crSP":3.19,"bsSC":106000,"bsRelax":175601,"bsUND":234984,"bsSP":385880,"ct4":4,"ct5":15,"ct6":14,"ct7":4,"ct8":4,"ct9":7,"donSP":22,"dtSP":16.0},{"stt":36,"gdkv":"Phan Thị Hồng Gấm","salon":"363 LNQ TN","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1462,"dtT8":332.6,"aovT8":227469,"crSC":49.46,"crRelax":91.93,"crUND":6.54,"crSP":3.32,"bsSC":116000,"bsRelax":156095,"bsUND":237579,"bsSP":333043,"ct4":2,"ct5":16,"ct6":12,"ct7":4,"ct8":4,"ct9":6,"donSP":20,"dtSP":14.6},{"stt":37,"gdkv":"Phan Thị Hồng Gấm","salon":"39 HBT","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":2021,"dtT8":496.6,"aovT8":245702,"crSC":53.82,"crRelax":73.29,"crUND":8.03,"crSP":4.02,"bsSC":109000,"bsRelax":202247,"bsUND":302261,"bsSP":361584,"ct4":4,"ct5":21,"ct6":18,"ct7":5,"ct8":5,"ct9":23,"donSP":28,"dtSP":20.3},{"stt":38,"gdkv":"Phan Thị Hồng Gấm","salon":"50BT4 NPC LD","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":2504,"dtT8":621.4,"aovT8":248172,"crSC":58.57,"crRelax":67.59,"crUND":16.62,"crSP":9.36,"bsSC":104000,"bsRelax":196110,"bsUND":244793,"bsSP":149705,"ct4":7,"ct5":22,"ct6":21,"ct7":6,"ct8":6,"ct9":15,"donSP":33,"dtSP":24.0},{"stt":39,"gdkv":"Trịnh Văn Quang","salon":"1180 QT","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":1839,"dtT8":471.7,"aovT8":256500,"crSC":54.48,"crRelax":80.36,"crUND":8.15,"crSP":4.23,"bsSC":127000,"bsRelax":182305,"bsUND":327047,"bsSP":334601,"ct4":4,"ct5":23,"ct6":15,"ct7":5,"ct8":5,"ct9":4,"donSP":25,"dtSP":18.2},{"stt":40,"gdkv":"Trịnh Văn Quang","salon":"12 LDT","vung":"Nam","salesup":"Nosalesup","khT8":2304,"dtT8":623.2,"aovT8":270476,"crSC":56.88,"crRelax":71.19,"crUND":15.83,"crSP":6.93,"bsSC":122000,"bsRelax":189183,"bsUND":309819,"bsSP":250281,"ct4":8,"ct5":25,"ct6":19,"ct7":6,"ct8":6,"ct9":5,"donSP":31,"dtSP":22.6},{"stt":41,"gdkv":"Trịnh Văn Quang","salon":"32 NAT","vung":"Nam","salesup":"Nosalesup","khT8":1275,"dtT8":297.0,"aovT8":232906,"crSC":53.83,"crRelax":87.59,"crUND":8.18,"crSP":3.57,"bsSC":116000,"bsRelax":150186,"bsUND":310366,"bsSP":378579,"ct4":2,"ct5":8,"ct6":10,"ct7":3,"ct8":3,"ct9":1,"donSP":16,"dtSP":11.6},{"stt":42,"gdkv":"Trịnh Văn Quang","salon":"483 TN","vung":"Nam","salesup":"Nosalesup","khT8":2008,"dtT8":518.2,"aovT8":258054,"crSC":60.81,"crRelax":79.16,"crUND":9.38,"crSP":8.39,"bsSC":114000,"bsRelax":183463,"bsUND":343311,"bsSP":134397,"ct4":5,"ct5":24,"ct6":17,"ct7":5,"ct8":5,"ct9":6,"donSP":27,"dtSP":19.6},{"stt":43,"gdkv":"Trịnh Văn Quang","salon":"76 PVH","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":1464,"dtT8":336.3,"aovT8":229690,"crSC":69.53,"crRelax":74.34,"crUND":7.91,"crSP":5.43,"bsSC":111000,"bsRelax":152083,"bsUND":312872,"bsSP":270966,"ct4":3,"ct5":10,"ct6":12,"ct7":4,"ct8":4,"ct9":5,"donSP":20,"dtSP":14.6},{"stt":44,"gdkv":"Tống Xuân Quyền","salon":"113 THD AG","vung":"Nam","salesup":"Nosalesup","khT8":954,"dtT8":222.4,"aovT8":233153,"crSC":49.0,"crRelax":98.36,"crUND":4.62,"crSP":2.68,"bsSC":109000,"bsRelax":153088,"bsUND":422669,"bsSP":360597,"ct4":1,"ct5":4,"ct6":8,"ct7":2,"ct8":2,"ct9":1,"donSP":12,"dtSP":8.7},{"stt":45,"gdkv":"Tống Xuân Quyền","salon":"186 DTH","vung":"Nam","salesup":"Nosalesup","khT8":2822,"dtT8":671.6,"aovT8":237993,"crSC":59.07,"crRelax":73.44,"crUND":12.58,"crSP":3.96,"bsSC":103000,"bsRelax":165049,"bsUND":319283,"bsSP":398751,"ct4":8,"ct5":31,"ct6":24,"ct7":7,"ct8":7,"ct9":4,"donSP":38,"dtSP":27.6},{"stt":46,"gdkv":"Tống Xuân Quyền","salon":"236 DBT","vung":"Nam","salesup":"Ngô Thị Mai Loan","khT8":2420,"dtT8":540.5,"aovT8":223365,"crSC":63.76,"crRelax":65.87,"crUND":7.97,"crSP":3.39,"bsSC":113000,"bsRelax":160860,"bsUND":424280,"bsSP":341385,"ct4":6,"ct5":24,"ct6":20,"ct7":6,"ct8":6,"ct9":3,"donSP":32,"dtSP":23.3},{"stt":47,"gdkv":"Tống Xuân Quyền","salon":"237 NTT","vung":"Nam","salesup":"Nosalesup","khT8":4575,"dtT8":1134.9,"aovT8":248066,"crSC":63.61,"crRelax":75.16,"crUND":10.68,"crSP":3.77,"bsSC":123000,"bsRelax":160013,"bsUND":335813,"bsSP":363722,"ct4":11,"ct5":29,"ct6":36,"ct7":11,"ct8":11,"ct9":8,"donSP":58,"dtSP":42.2},{"stt":48,"gdkv":"Tống Xuân Quyền","salon":"25 TD","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":3072,"dtT8":767.5,"aovT8":249828,"crSC":64.39,"crRelax":66.81,"crUND":9.51,"crSP":9.6,"bsSC":121000,"bsRelax":173091,"bsUND":373477,"bsSP":216075,"ct4":7,"ct5":14,"ct6":26,"ct7":8,"ct8":8,"ct9":15,"donSP":42,"dtSP":30.6},{"stt":49,"gdkv":"Tống Xuân Quyền","salon":"341 XVNT","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":1084,"dtT8":216.3,"aovT8":199547,"crSC":64.51,"crRelax":64.04,"crUND":5.55,"crSP":4.58,"bsSC":109000,"bsRelax":145560,"bsUND":343572,"bsSP":369492,"ct4":2,"ct5":6,"ct6":9,"ct7":3,"ct8":3,"ct9":0,"donSP":15,"dtSP":10.9},{"stt":50,"gdkv":"Tống Xuân Quyền","salon":"420 HTP","vung":"Nam","salesup":"Nguyễn Thị Thanh Tâm","khT8":3281,"dtT8":721.0,"aovT8":219750,"crSC":67.21,"crRelax":67.58,"crUND":6.35,"crSP":4.75,"bsSC":109000,"bsRelax":159111,"bsUND":379758,"bsSP":312904,"ct4":6,"ct5":30,"ct6":27,"ct7":8,"ct8":8,"ct9":6,"donSP":43,"dtSP":31.3},{"stt":51,"gdkv":"Tống Xuân Quyền","salon":"7 DTP LA","vung":"Nam","salesup":"Nosalesup","khT8":1010,"dtT8":227.0,"aovT8":224767,"crSC":69.19,"crRelax":93.61,"crUND":5.97,"crSP":2.81,"bsSC":114000,"bsRelax":128698,"bsUND":235639,"bsSP":403056,"ct4":1,"ct5":6,"ct6":9,"ct7":3,"ct8":3,"ct9":3,"donSP":15,"dtSP":10.9},{"stt":52,"gdkv":"Đoàn Trung Đức","salon":"109 TQH","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":3180,"dtT8":741.9,"aovT8":233288,"crSC":59.25,"crRelax":70.25,"crUND":11.83,"crSP":4.2,"bsSC":108000,"bsRelax":173294,"bsUND":283486,"bsSP":334031,"ct4":8,"ct5":38,"ct6":27,"ct7":8,"ct8":8,"ct9":11,"donSP":43,"dtSP":31.3},{"stt":53,"gdkv":"Đoàn Trung Đức","salon":"116 TK","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":4029,"dtT8":966.7,"aovT8":239925,"crSC":54.56,"crRelax":70.45,"crUND":12.03,"crSP":4.77,"bsSC":102000,"bsRelax":196700,"bsUND":244033,"bsSP":342331,"ct4":9,"ct5":80,"ct6":34,"ct7":10,"ct8":10,"ct9":16,"donSP":54,"dtSP":39.3},{"stt":54,"gdkv":"Đoàn Trung Đức","salon":"382 NT","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":4188,"dtT8":1108.5,"aovT8":264692,"crSC":59.81,"crRelax":72.72,"crUND":14.37,"crSP":7.31,"bsSC":108000,"bsRelax":193668,"bsUND":281620,"bsSP":256746,"ct4":11,"ct5":59,"ct6":36,"ct7":11,"ct8":11,"ct9":31,"donSP":58,"dtSP":42.2},{"stt":55,"gdkv":"Đoàn Trung Đức","salon":"55A NVL","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1792,"dtT8":396.8,"aovT8":221402,"crSC":64.76,"crRelax":57.53,"crUND":11.49,"crSP":5.86,"bsSC":105000,"bsRelax":185782,"bsUND":242259,"bsSP":318858,"ct4":4,"ct5":14,"ct6":15,"ct7":5,"ct8":5,"ct9":11,"donSP":25,"dtSP":18.2},{"stt":56,"gdkv":"Đoàn Trung Đức","salon":"62 LH","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1342,"dtT8":268.4,"aovT8":199964,"crSC":67.02,"crRelax":55.37,"crUND":10.05,"crSP":4.8,"bsSC":107000,"bsRelax":171486,"bsUND":232710,"bsSP":206356,"ct4":2,"ct5":7,"ct6":11,"ct7":3,"ct8":3,"ct9":4,"donSP":17,"dtSP":12.3},{"stt":57,"gdkv":"Đoàn Trung Đức","salon":"65 CD","vung":"Bắc","salesup":"Phạm Thị Nga","khT8":1341,"dtT8":339.9,"aovT8":253493,"crSC":53.52,"crRelax":86.9,"crUND":10.78,"crSP":4.38,"bsSC":111000,"bsRelax":173710,"bsUND":255886,"bsSP":355308,"ct4":2,"ct5":14,"ct6":11,"ct7":3,"ct8":3,"ct9":9,"donSP":17,"dtSP":12.3},{"stt":58,"gdkv":"Đoàn Trung Đức","salon":"90 NH","vung":"Bắc","salesup":"Nosalesup","khT8":1775,"dtT8":455.5,"aovT8":256639,"crSC":58.16,"crRelax":65.02,"crUND":14.56,"crSP":3.89,"bsSC":109000,"bsRelax":217524,"bsUND":252327,"bsSP":387112,"ct4":4,"ct5":20,"ct6":15,"ct7":4,"ct8":4,"ct9":13,"donSP":23,"dtSP":16.7}];
+
+/* ====== CONSTANTS ====== */
+const VON = {serum:184500, dauGoi:116500, vienUong:63000};
+const DAYS = 31;
+const LNG_PROD = {ct6:421750, ct7:542500, ct8:352500};   // lãi gộp/đơn nhóm SP
+const DT_PROG = {ct4:630000, ct5:400000, ct9:666663, ct6:696000, ct7:960000, ct8:600000}; // DT/đơn
+const GIFT_PROG = {ct4:VON.serum, ct5:VON.dauGoi, ct9:VON.serum, ct6:274250, ct7:417500, ct8:247500}; // vốn/đơn
+const PROG_NAME = {ct4:"UND tặng Serum", ct5:"Upsale Combo tặng quà", ct9:"Gội trải nghiệm tặng Serum", ct6:"Mua Serum tặng 1 quà", ct7:"Trọn bộ giảm 40%", ct8:"Trong uống ngoài xịt"};
+const PROG_NGANH = {ct4:"UND", ct5:"Relax", ct9:"Relax", ct6:"Sản phẩm", ct7:"Sản phẩm", ct8:"Sản phẩm"};
+
+/* ====== HELPERS ====== */
+const $ = s=>document.querySelector(s);
+const sum = (k)=>SALONS.reduce((a,s)=>a+(s[k]||0),0);
+function fmtInt(n){return Math.round(n).toLocaleString('vi-VN');}
+function fmtVnd(n){return Math.round(n).toLocaleString('vi-VN')+'đ';}
+function fmtTr(n){return n.toLocaleString('vi-VN',{minimumFractionDigits:1,maximumFractionDigits:1})+'tr';}
+function fmtPct(n){return n.toLocaleString('vi-VN',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';}
+function LS(k,v){ if(v===undefined){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}} localStorage.setItem(k,JSON.stringify(v)); }
+
+/* ====== TABS ====== */
+document.querySelectorAll('.nav button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); $('#'+b.dataset.tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+/* ================= TAB 2 · DAILY METRIC ================= */
+const METRICS = [
+  {k:'crRelax',t:'cr',lbl:'CR Relax'},{k:'crUND',t:'cr',lbl:'CR UND'},{k:'crSP',t:'cr',lbl:'CR SP'},
+  {k:'bsRelax',t:'bs',lbl:'BS Relax'},{k:'bsUND',t:'bs',lbl:'BS UND'},{k:'bsSP',t:'bs',lbl:'BS SP'}
+];
+function daySel(){return $('#daySel').value;}
+function metKey(d){return 't8_met_d'+d;}
+(function initDay(){
+  const sel=$('#daySel');
+  for(let d=1;d<=DAYS;d++){const o=document.createElement('option');o.value=d;o.textContent='Ngày '+d+'/8';sel.appendChild(o);}
+  sel.value=1;
+})();
+function tgtVal(s,m){return s[m.k];}
+function fmtTgt(m,v){return m.t==='cr'?fmtPct(v):fmtInt(v)+'đ';}
+function renderMet(){
+  const d=daySel(), reg=$('#regSel').value, store=LS(metKey(d))||{};
+  const body=$('#metBody'); body.innerHTML='';
+  let rows=SALONS.filter(s=>!reg||s.vung===reg), miss=0, filled=0;
+  rows.forEach(s=>{
+    const tr=document.createElement('tr');
+    let tds=`<td>${s.salon}</td><td>${s.vung}</td>`;
+    METRICS.forEach(m=>{
+      const tgt=tgtVal(s,m), id=s.stt+'_'+m.k, cur=store[id];
+      let cls='';
+      if(cur!==undefined&&cur!==''&&cur!==null){filled++; if(parseFloat(cur)<tgt){cls='miss';miss++;}else cls='hit';}
+      tds+=`<td class="${cls}" data-td="${id}"><span class="mt-tgt">MT ${fmtTgt(m,tgt)}</span><input class="ci" data-id="${id}" data-tgt="${tgt}" value="${cur!==undefined&&cur!==null?cur:''}" inputmode="decimal"></td>`;
+    });
+    tr.innerHTML=tds; body.appendChild(tr);
+  });
+  $('#dayStat').textContent=`Ngày ${d}: ${filled} ô đã nhập · ${miss} ô chưa đạt (đỏ)`;
+  body.querySelectorAll('.ci').forEach(inp=>{
+    inp.oninput=()=>{
+      const d2=daySel(), st=LS(metKey(d2))||{}, id=inp.dataset.id, v=inp.value.trim().replace(/\./g,'').replace(',','.');
+      const td=inp.closest('td');
+      if(v===''){delete st[id]; td.classList.remove('miss','hit');}
+      else{st[id]=v; const below=parseFloat(v)<parseFloat(inp.dataset.tgt); td.classList.toggle('miss',below); td.classList.toggle('hit',!below);}
+      LS(metKey(d2),st); updateDayStat();
+    };
+  });
+}
+function updateDayStat(){
+  const d=daySel(),store=LS(metKey(d))||{}; let miss=0,filled=0;
+  Object.keys(store).forEach(id=>{filled++;});
+  document.querySelectorAll('#metBody td.miss').forEach(()=>miss++);
+  $('#dayStat').textContent=`Ngày ${d}: ${filled} ô đã nhập · ${miss} ô chưa đạt (đỏ)`;
+}
+$('#daySel').onchange=()=>{renderMet();renderMet2();};
+$('#regSel').onchange=()=>{renderMet();renderMet2();};
+$('#clearDay').onclick=()=>{ if(confirm('Xóa toàn bộ số đã nhập của ngày này (cả 2 bảng)?')){localStorage.removeItem(metKey(daySel()));localStorage.removeItem(absKey(daySel()));renderMet();renderMet2();} };
+$('#fillDemo').onclick=()=>{
+  const d=daySel(), st={};
+  SALONS.forEach((s,i)=>METRICS.forEach((m,j)=>{
+    const tgt=tgtVal(s,m), f=0.9+(((i*3+j)%7)*0.035); // 0.9 .. 1.11
+    let v=tgt*f; v=m.t==='cr'?Math.round(v*100)/100:Math.round(v/1000)*1000;
+    st[s.stt+'_'+m.k]=String(v);
+  }));
+  LS(metKey(d),st);
+  // demo cho bảng số tuyệt đối
+  const st2={};
+  SALONS.forEach((s,i)=>{
+    const nsTong=Math.max(8,Math.round(s.khT8/110));
+    ABS_METRICS.forEach((m,j)=>{
+      if(m.base==='ns'){
+        st2[s.stt+'_'+m.k]=String(m.k==='nsTong'?nsTong:Math.round(nsTong*(0.6+((i%4)*0.09))));
+      }else{
+        const tgt=absTgt(s,m), f=0.9+(((i*2+j)%7)*0.035);
+        st2[s.stt+'_'+m.k]=String(Math.round(tgt*f));
+      }
+    });
+  });
+  LS(absKey(d),st2);
+  renderMet(); renderMet2();
+};
+
+/* ---- bảng số tuyệt đối ---- */
+const ABS_METRICS=[
+  {k:'khTong',base:'tong'},
+  {k:'nsCT',base:'ns'},{k:'nsTong',base:'ns'},
+  {k:'dvRelax',base:'dv',cr:'crRelax'},{k:'dvUND',base:'dv',cr:'crUND'},{k:'dvSP',base:'dv',cr:'crSP'},
+  {k:'khRelax',base:'kh',cr:'crRelax'},{k:'khUND',base:'kh',cr:'crUND'},{k:'khSP',base:'kh',cr:'crSP'}
+];
+function absKey(d){return 't8_abs_d'+d;}
+function absTgt(s,m){
+  const khNgay=Math.round(s.khT8/DAYS);
+  if(m.base==='tong') return khNgay;
+  const khNganh=Math.round(khNgay*s[m.cr]/100);
+  return khNganh; // DV mốc tối thiểu = số khách ngành
+}
+function updatePct(stt){
+  const st=LS(absKey(daySel()))||{};
+  const ct=parseFloat(st[stt+'_nsCT']), tong=parseFloat(st[stt+'_nsTong']);
+  const cell=document.getElementById('pct_'+stt); if(!cell)return;
+  if(ct>=0&&tong>0){const p=ct/tong*100; cell.textContent=p.toFixed(0)+'%'; cell.style.color=p>=70?'var(--green)':'var(--red)';}
+  else{cell.textContent='—'; cell.style.color='var(--mute)';}
+}
+function renderMet2(){
+  const d=daySel(), reg=$('#regSel').value, store=LS(absKey(d))||{};
+  const body=$('#absBody'); body.innerHTML='';
+  let rows=SALONS.filter(s=>!reg||s.vung===reg);
+  rows.forEach(s=>{
+    const tr=document.createElement('tr');
+    let tds=`<td>${s.salon}</td><td>${s.vung}</td>`;
+    ABS_METRICS.forEach(m=>{
+      const id=s.stt+'_'+m.k, cur=store[id];
+      if(m.base==='ns'){
+        tds+=`<td data-td="${id}"><input class="ci" data-abs="1" data-ns="1" data-stt="${s.stt}" data-id="${id}" value="${cur!==undefined&&cur!==null?cur:''}" inputmode="numeric" style="width:56px"></td>`;
+      }else{
+        const tgt=absTgt(s,m); let cls='';
+        if(cur!==undefined&&cur!==''&&cur!==null){ if(parseFloat(cur)<tgt)cls='miss'; else cls='hit'; }
+        tds+=`<td class="${cls}" data-td="${id}"><span class="mt-tgt">MT ${fmtInt(tgt)}</span><input class="ci" data-abs="1" data-id="${id}" data-tgt="${tgt}" value="${cur!==undefined&&cur!==null?cur:''}" inputmode="numeric" style="width:56px"></td>`;
+      }
+      if(m.k==='nsTong'){
+        const ct=parseFloat(store[s.stt+'_nsCT']), tong=parseFloat(store[s.stt+'_nsTong']);
+        const has=(ct>=0&&tong>0), p=has?ct/tong*100:null;
+        tds+=`<td class="num" id="pct_${s.stt}" style="font-weight:700;color:${has?(p>=70?'var(--green)':'var(--red)'):'var(--mute)'}">${has?p.toFixed(0)+'%':'—'}</td>`;
+      }
+    });
+    tr.innerHTML=tds; body.appendChild(tr);
+  });
+  body.querySelectorAll('.ci').forEach(inp=>{
+    inp.oninput=()=>{
+      const d2=daySel(), st=LS(absKey(d2))||{}, id=inp.dataset.id, v=inp.value.trim().replace(/\./g,'').replace(',','.');
+      if(v===''){delete st[id];}else{st[id]=v;}
+      LS(absKey(d2),st);
+      if(inp.dataset.ns){ updatePct(inp.dataset.stt); }
+      else{
+        const td=inp.closest('td');
+        if(v===''){td.classList.remove('miss','hit');}
+        else{const below=parseFloat(v)<parseFloat(inp.dataset.tgt); td.classList.toggle('miss',below); td.classList.toggle('hit',!below);}
+      }
+    };
+  });
+}
+
+/* ================= TAB 3 · CAMPAIGN P&L TRACKER ================= */
+function margin(){return Math.max(1,parseFloat($('#marginIn').value||70))/100;}
+const CAMP_COND = {
+  ct4:{cond:'Dịch vụ: <b>bill dịch vụ UND ≥ 630.000đ</b> (uốn/duỗi/nhuộm/phục hồi).',gift:'🎁 Tặng: 01 Serum Ngưu Bàng (696.000đ) — bảo vệ da đầu, chắc khỏe nang tóc, ngừa gãy rụng.'},
+  ct5:{cond:'Dịch vụ: khách <b>nâng lên Combo 4 hoặc 5</b> (doanh thu Relax ≥ 400.000đ).',gift:'🎁 Tặng: 01 Dầu gội HOẶC 01 Kem ủ-xả Ngưu Bàng (452.000đ).'},
+  ct9:{cond:'Dịch vụ: khách làm <b>Gói Gội trải nghiệm 75p / 90p / 115p</b>.',gift:'🎁 Tặng: 01 Serum Ngưu Bàng (696.000đ).'},
+  ct6:{cond:'Sản phẩm: khách <b>mua 01 Serum Ngưu Bàng</b> (696.000đ).',gift:'🎁 Tặng: 01 quà tự chọn — Viên uống Doctor Bio / Dầu gội / Kem ủ-xả (chỉ 01 quà/bill).'},
+  ct7:{cond:'Sản phẩm: khách <b>mua trọn bộ 3 sản phẩm</b> (Dầu gội + Kem ủ-xả + Serum).',gift:'🎁 Ưu đãi: giảm 40% — giá bộ 960.000đ.'},
+  ct8:{cond:'Sản phẩm: khách <b>mua combo Serum + Viên uống Doctor Bio</b>.',gift:'🎁 Ưu đãi: combo 600.000đ (giá lẻ 1.046.000đ).'},
+};
+function daysLeft(){ try{const end=new Date(2026,7,31); const now=new Date(); const d=Math.ceil((end-now)/86400000); return d>0?d:0;}catch(e){return 26;} }
+function progKey(p){return 't8_camp_'+p;}
+function renderCamp(){
+  const p=$('#progSel').value, m=margin(), reg=$('#regSel3').value, store=LS(progKey(p))||{};
+  const von=GIFT_PROG[p];
+  $('#campTitle').textContent=PROG_NAME[p];
+  $('#campCond').innerHTML=`📋 ${CAMP_COND[p].cond}<span class="gift">${CAMP_COND[p].gift}</span>`;
+  const body=$('#salBody'); body.innerHTML='';
+  let rows=SALONS.filter(s=>!reg||s.vung===reg);
+  let tMT=0,tBill=0,tDT=0,tCost=0,tPL=0;
+  rows.forEach(s=>{
+    const mt=s[p], rec=store[s.stt]||{};
+    const bill=rec.bill!==undefined&&rec.bill!==''?parseFloat(rec.bill):0;
+    const dt=rec.dt!==undefined&&rec.dt!==''?parseFloat(rec.dt):0;
+    const cost=bill*von/1e6, pl=dt*m-cost;
+    tMT+=mt;tBill+=bill;tDT+=dt;tCost+=cost;tPL+=pl;
+    const pct=mt>0?Math.min(100,bill/mt*100):0;
+    let hq;
+    if(bill<=0) hq='<span class="hq none">Chưa có bill</span>';
+    else if(pl>=0) hq='<span class="hq win">Lãi</span>';
+    else hq='<span class="hq loss">Lỗ</span>';
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${s.salon}</td><td style="font-weight:500;color:var(--mute)">${s.gdkv}</td>
+      <td class="num">${fmtInt(mt)}</td>
+      <td class="num"><span class="pbar"><i style="width:${pct}%"></i></span><input class="bi" data-p="${p}" data-stt="${s.stt}" data-f="bill" value="${rec.bill!==undefined?rec.bill:''}" inputmode="decimal"></td>
+      <td class="num"><input class="bi" style="width:58px" data-p="${p}" data-stt="${s.stt}" data-f="dt" value="${rec.dt!==undefined?rec.dt:''}" inputmode="decimal"></td>
+      <td class="num">${cost?fmtTr(cost):'0,0tr'}</td>
+      <td class="num" style="color:${bill>0?(pl>=0?'var(--green)':'var(--red)'):'var(--mute)'};font-weight:700">${bill>0?fmtTr(pl):'0,0tr'}</td>
+      <td class="ctr">${hq}</td>`;
+    body.appendChild(tr);
+  });
+  const tr=document.createElement('tr'); tr.className='total';
+  tr.innerHTML=`<td>TỔNG (${rows.length} salon)</td><td>—</td><td class="num">${fmtInt(tMT)}</td><td class="num">${fmtInt(tBill)}</td><td class="num">${fmtTr(tDT)}</td><td class="num">${fmtTr(tCost)}</td><td class="num" style="color:${tPL>=0?'var(--green)':'var(--red)'}">${fmtTr(tPL)}</td><td class="ctr">—</td>`;
+  body.appendChild(tr);
+  // KPI
+  const pctBill=tMT>0?(tBill/tMT*100):0;
+  $('#kpi3').innerHTML=`
+    <div class="kb3"><div class="kl3">🎯 Mục tiêu quà (cố định theo tháng trước)</div><div class="kv3">${fmtInt(tMT)}<small> suất</small></div></div>
+    <div class="kb3"><div class="kl3">🧾 Bill đã gắn camp</div><div class="kv3">${fmtInt(tBill)} <small>(${pctBill.toFixed(1)}%)</small></div></div>
+    <div class="kb3"><div class="kl3">💰 Lãi/lỗ thực</div><div class="kv3 ${tPL>=0?'pos':'neg'}">${fmtTr(tPL)}</div></div>`;
+  $('#campCtx').innerHTML=`Ngành <b>${PROG_NGANH[p]}</b> · vốn quà <b>${fmtVnd(von)}</b>/bill · 01/08 → 31/08/2026 · còn <b>${daysLeft()} ngày</b> · DT phát sinh <b>${fmtTr(tDT)}</b> · chi phí thực <b>${fmtTr(tCost)}</b> · biên LN <b>${(m*100).toFixed(0)}%</b>`;
+  body.querySelectorAll('.bi').forEach(inp=>{
+    inp.oninput=()=>{
+      const st=LS(progKey(inp.dataset.p))||{}, id=inp.dataset.stt;
+      st[id]=st[id]||{}; st[id][inp.dataset.f]=inp.value.trim();
+      LS(progKey(inp.dataset.p),st); renderCamp();
+    };
+  });
+}
+$('#progSel').onchange=renderCamp;
+$('#regSel3').onchange=renderCamp;
+$('#marginIn').oninput=renderCamp;
+$('#clearProg').onclick=()=>{ if(confirm('Xóa số đã nhập của chương trình này?')){localStorage.removeItem(progKey($('#progSel').value));renderCamp();} };
+
+/* ================= TAB 5 · BỐ & CON ================= */
+const DINOS=[['🦕','Bé Cổ Dài'],['🦖','Bé Bạo Chúa'],['🐉','Bé Cánh Bay'],['🦴','Bé Ba Sừng'],['🥚','Bé Trứng Nở'],['🐊','Bé Đầm Lầy'],['🦎','Bé Gai Lưng'],['🐢','Bé Mai Cứng'],['🦈','Bé Biển Cả'],['🦅','Bé Móng Vuốt'],['🌋','Bé Núi Lửa'],['🏆','Khủng Long Chúa']];
+function renderToy(){
+  const box=$('#toySet'); if(!box)return; box.innerHTML='';
+  DINOS.forEach((d,i)=>{
+    const last=i===11;
+    box.innerHTML+=`<div class="toy ${last?'b2':''}"><div class="em">${d[0]}</div><div class="nm">${d[1]}</div><div class="no">#${i+1}${last?' · phần thưởng lớn':''}</div></div>`;
+  });
+}
+function kidKey(){return 't8_kid';}
+function renderKid(){
+  const pct=Math.max(0,parseFloat($('#kidPct').value||8))/100;
+  const toyCost=Math.max(0,parseFloat($('#toyCost').value||8000));
+  const per=Math.max(1,parseFloat($('#toyPer').value||1.5));
+  const sell=Math.max(0,parseFloat($('#toySell').value||20000));
+  const buyPct=Math.max(0,parseFloat($('#buyPct').value||15))/100;
+  const buyQty=Math.max(0,parseFloat($('#buyQty').value||3));
+  const store=LS(kidKey())||{};
+  const body=$('#kidBody'); body.innerHTML='';
+  const nam=SALONS.filter(s=>s.vung==='Nam');
+  let tKH=0,tKid=0,tPiece=0,tCost=0,tRev=0,tNet=0,tAct=0,tActCost=0;
+  nam.forEach(s=>{
+    const kid=Math.round(s.khT8*pct), piece=Math.round(kid*per), cost=piece*toyCost/1e6;
+    const rev=kid*buyPct*buyQty*sell/1e6, net=cost-rev;
+    const rec=store[s.stt]||{}, act=rec.act!==undefined&&rec.act!==''?parseFloat(rec.act):0;
+    const actCost=Math.round(act*per)*toyCost/1e6;
+    tKH+=s.khT8;tKid+=kid;tPiece+=piece;tCost+=cost;tRev+=rev;tNet+=net;tAct+=act;tActCost+=actCost;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${s.salon}</td><td style="font-weight:500;color:var(--mute)">${s.gdkv}</td><td class="num">${fmtInt(s.khT8)}</td><td class="num">${fmtInt(kid)}</td><td class="num">${fmtInt(piece)}</td><td class="num">${fmtTr(cost)}</td>
+      <td class="num" style="color:var(--green)">${fmtTr(rev)}</td>
+      <td class="num" style="font-weight:700;color:${net<=0?'var(--green)':'var(--ink)'}">${fmtTr(net)}</td>
+      <td class="num"><input class="bi" style="width:52px" data-stt="${s.stt}" value="${rec.act!==undefined?rec.act:''}" inputmode="decimal"></td>
+      <td class="num" style="font-weight:700;color:var(--wood)">${act?fmtTr(actCost):'0,0tr'}</td>`;
+    body.appendChild(tr);
+  });
+  const tr=document.createElement('tr'); tr.className='total';
+  tr.innerHTML=`<td>TỔNG (${nam.length} salon Nam)</td><td>—</td><td class="num">${fmtInt(tKH)}</td><td class="num">${fmtInt(tKid)}</td><td class="num">${fmtInt(tPiece)}</td><td class="num">${fmtTr(tCost)}</td><td class="num" style="color:var(--green)">${fmtTr(tRev)}</td><td class="num" style="color:${tNet<=0?'var(--green)':'var(--ink)'}">${fmtTr(tNet)}</td><td class="num">${fmtInt(tAct)}</td><td class="num">${fmtTr(tActCost)}</td>`;
+  body.appendChild(tr);
+  $('#kidStat').textContent=`${nam.length} salon Nam · MT ${fmtInt(tKid)} bé · chi phí ${fmtTr(tCost)} · DT bán thêm ${fmtTr(tRev)} · ròng ${fmtTr(tNet)}`;
+  body.querySelectorAll('.bi').forEach(inp=>{
+    inp.oninput=()=>{const st=LS(kidKey())||{};const id=inp.dataset.stt;st[id]=st[id]||{};st[id].act=inp.value.trim();LS(kidKey(),st);renderKid();};
+  });
+}
+['#kidPct','#toyCost','#toyPer','#toySell','#buyPct','#buyQty'].forEach(id=>{const el=$(id); if(el)el.oninput=renderKid;});
+
+/* ================= TAB 4 · CHECKLIST ================= */
+const CHECKLIST = [
+  {g:'A',cls:'',title:'Salesup & Vận hành salon',desc:'Rà soát tồn hàng, đào tạo kịch bản, nghiệm thu nhân sự nắm chương trình.',items:[
+    {t:'Rà soát tồn Serum Ngưu Bàng — đủ định mức chạy 6 CT (58 salon)',std:'Đủ tồn theo phân bổ đầu kỳ; báo SM/Kho ngay nếu thiếu',own:'Salesup',dl:'2026-08-01'},
+    {t:'Rà soát tồn Dầu gội & Kem ủ-xả Ngưu Bàng (58 salon)',std:'Đủ 2 mã cho CT tặng quà & Trọn bộ; báo kho nếu lệch',own:'Salesup',dl:'2026-08-01'},
+    {t:'Rà soát tồn Viên uống Doctor Bio (CT Mua Serum tặng quà & Trong uống ngoài xịt)',std:'Đủ tồn tối thiểu cho salon chạy CT',own:'Salesup',dl:'2026-08-01'},
+    {t:'Đào tạo SaleSup kịch bản bán 6 chương trình + quy tắc “1 khách 1 CT”',std:'Nghiệm thu đủ 58 salon triển khai',own:'Salesup',dl:'2026-08-02'},
+    {t:'Nghiệm thu nhân sự salon nắm chương trình (lễ tân tra lịch sử bill)',std:'Nghiệm thu đủ 58 salon (form đi điểm)',own:'Salesup / SM',dl:'2026-08-03'},
+    {t:'Truyền thông cơ chế động lực TIP +50% (đạt 4tr Pharma/tuần)',std:'Nhân sự nắm cơ chế, có bảng theo dõi tuần',own:'Salesup',dl:'2026-08-02'},
+  ]},
+  {g:'B',cls:'',title:'Marketing — Notification & Đào tạo',desc:'Notification nhân sự & khách hàng, kịch bản, đào tạo nội dung.',items:[
+    {t:'Notification nhân sự toàn chuỗi về 6 chương trình Pharma T8',std:'Nghiệm thu noti đã bắn (ảnh chụp)',own:'Marketing',dl:'2026-07-31'},
+    {t:'Notification khách hàng mục tiêu từng chương trình',std:'KH mục tiêu nhận đúng thông điệp; ảnh nghiệm thu',own:'Marketing / CRM',dl:'2026-08-01'},
+    {t:'Kịch bản bán hàng chi tiết cho từng chương trình (script tư vấn)',std:'Đủ 6 kịch bản, duyệt Ngành hàng',own:'Marketing / Ngành hàng',dl:'2026-07-30'},
+    {t:'Đào tạo nội dung chương trình trên nhóm nhân sự (video/slide)',std:'Đã đăng & điểm danh nắm bắt',own:'Marketing',dl:'2026-08-02'},
+    {t:'3 nội dung truyền thông fanpage đúng thông điệp CT',std:'3 post đã lên, đúng thông điệp',own:'Marketing',dl:'2026-08-04'},
+  ]},
+  {g:'C',cls:'',title:'Phối hợp Chăm sóc khách hàng',desc:'Thiết kế ảnh gửi khách & kịch bản chat cho từng chương trình.',items:[
+    {t:'Ảnh gửi khách CT “UND tặng Serum” (phối hợp Design)',std:'Ảnh duyệt, gắn đúng ưu đãi, gửi thử OK',own:'CSKH + Design',dl:'2026-08-01'},
+    {t:'Ảnh gửi khách CT “Upsale Combo tặng quà”',std:'Ảnh duyệt, gửi thử OK',own:'CSKH + Design',dl:'2026-08-01'},
+    {t:'Ảnh gửi khách CT “Gội trải nghiệm tặng Serum”',std:'Ảnh duyệt, gửi thử OK',own:'CSKH + Design',dl:'2026-08-01'},
+    {t:'Ảnh gửi khách 3 CT bán sản phẩm (Serum tặng quà / Trọn bộ / Trong uống ngoài xịt)',std:'Bộ ảnh duyệt, gửi thử OK',own:'CSKH + Design',dl:'2026-08-02'},
+    {t:'Kịch bản chat CSKH cho khách hỏi về chương trình',std:'Kịch bản duyệt, đồng bộ tổng đài',own:'CSKH',dl:'2026-08-02'},
+  ]},
+  {g:'D',cls:'design',title:'Ấn phẩm Marketing — bàn giao Design (tách riêng)',desc:'Toàn bộ ấn phẩm để Design nhìn tổng thể một chỗ. Mỗi ấn phẩm: đúng thông điệp CT, đã duyệt, đã lên hệ thống.',items:[
+    {t:'Banner & Landing page 6 chương trình',std:'Đầy đủ thông tin, thông điệp tới khách; link đúng',own:'Design',dl:'2026-07-31'},
+    {t:'Poster / Standee / Bảng gập tại salon',std:'Đúng vị trí mẫu, đúng CT T8, gỡ hết ấn phẩm T7 cũ',own:'Design',dl:'2026-08-02'},
+    {t:'Ấn phẩm Màn LED trong salon',std:'Đúng ấn phẩm CT đã duyệt, đã lên hệ thống',own:'Design',dl:'2026-08-02'},
+    {t:'Wifi marketing (banner khi khách kết nối)',std:'Hiển thị đúng, click dẫn về landing đúng',own:'Design',dl:'2026-08-02'},
+    {t:'Bộ ảnh gửi khách từng chương trình (bàn giao CSKH)',std:'Đủ 6 bộ, đúng ưu đãi, duyệt Ngành hàng',own:'Design',dl:'2026-08-01'},
+    {t:'Ảnh/nội dung 3 post fanpage',std:'Đủ 3 nội dung, đúng thông điệp',own:'Design',dl:'2026-08-03'},
+  ]},
+  {g:'E',cls:'',title:'Đánh giá & Cải thiện',desc:'Theo dõi số liệu & phản hồi sau khi chạy.',items:[
+    {t:'Số liệu báo cáo triển khai sau 7 ngày (theo mục tiêu CT)',std:'Báo cáo đúng mục tiêu chương trình',own:'Ngành hàng',dl:'2026-08-11'},
+    {t:'Ghi nhận phản hồi khách hàng về chương trình tại salon',std:'≥ 1 phản hồi/salon/lần đi điểm',own:'Salesup',dl:'2026-08-11'},
+    {t:'Ghi nhận khó khăn nhân sự khi triển khai kịch bản',std:'Báo Ngành hàng điều chỉnh kịch bản/đào tạo',own:'Salesup',dl:'2026-08-11'},
+  ]},
+];
+function clKey(){return 't8_checklist';}
+function renderCL(){
+  const store=LS(clKey())||{}, wrap=$('#clWrap'); wrap.innerHTML='';
+  let total=0, done=0;
+  CHECKLIST.forEach(grp=>{
+    const box=document.createElement('div'); box.className='clgrp '+grp.cls;
+    let rows='';
+    grp.items.forEach((it,idx)=>{
+      const id=grp.g+'_'+idx, st=store[id]||{}, ck=st.done?'checked':'', dl=st.dl||it.dl, cls=st.done?'done':'';
+      total++; if(st.done)done++;
+      rows+=`<tr class="${cls}" data-row="${id}">
+        <td>${it.t}</td>
+        <td class="std">${it.std}</td>
+        <td class="own">${it.own}</td>
+        <td><input class="dt" type="date" value="${dl}" data-id="${id}" data-f="dl"></td>
+        <td class="ctr"><label class="chk"><input type="checkbox" data-id="${id}" data-f="done" ${ck}> nghiệm thu</label></td>
+      </tr>`;
+    });
+    box.innerHTML=`<h3><span class="g">${grp.g}</span>${grp.title}<span class="prog-badge" id="pb_${grp.g}"></span></h3>
+      <div class="gd">${grp.desc}</div>
+      <div class="tbl"><table class="cl"><thead><tr><th>Đầu việc</th><th>Tiêu chuẩn nghiệm thu</th><th>Phụ trách</th><th>Thời gian HT</th><th class="ctr">Nghiệm thu / Sẵn sàng</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    wrap.appendChild(box);
+  });
+  // per-group badge + bindings
+  CHECKLIST.forEach(grp=>{
+    const st=LS(clKey())||{}; let t=0,d=0;
+    grp.items.forEach((it,idx)=>{t++; if((st[grp.g+'_'+idx]||{}).done)d++;});
+    const pb=$('#pb_'+grp.g); if(pb)pb.textContent=`${d}/${t}`;
+  });
+  wrap.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.onchange=()=>{const st=LS(clKey())||{};const id=cb.dataset.id;st[id]=st[id]||{};st[id].done=cb.checked;LS(clKey(),st);renderCL();};
+  });
+  wrap.querySelectorAll('input.dt').forEach(dt=>{
+    dt.onchange=()=>{const st=LS(clKey())||{};const id=dt.dataset.id;st[id]=st[id]||{};st[id].dl=dt.value;LS(clKey(),st);};
+  });
+  $('#clStat').textContent=`Tiến độ nghiệm thu: ${done}/${total} đầu việc (${Math.round(done/total*100)}%)`;
+}
+$('#clReset').onclick=()=>{ if(confirm('Bỏ tích toàn bộ checklist?')){const st=LS(clKey())||{};Object.keys(st).forEach(k=>{if(st[k])st[k].done=false;});LS(clKey(),st);renderCL();} };
+
+/* ====== INIT ====== */
+renderMet(); renderMet2(); renderCamp(); renderToy(); renderKid(); renderCL();
+</script>
+</body>
+</html>
