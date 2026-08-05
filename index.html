@@ -227,6 +227,11 @@
   footer .colophon{font-weight:800;font-size:12px;letter-spacing:.22em;}
   footer .meta{font-size:11px;color:var(--navy-pale);max-width:56ch;text-align:right;}
 
+  .sync{position:fixed;right:14px;bottom:14px;z-index:200;background:var(--navy-deep);color:#fff;font-size:11.5px;font-weight:600;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.28);display:flex;align-items:center;gap:8px;max-width:78vw;}
+  .sync .dot{width:8px;height:8px;border-radius:50%;background:var(--wood-lt);flex:0 0 8px;}
+  .sync.ok .dot{background:#4ADE80;} .sync.busy .dot{background:#FBBF24;}
+  .sync.warn{background:var(--red);} .sync.warn .dot{background:#fff;}
+
   @media(max-width:920px){
     .cards{grid-template-columns:1fr;} .stats .inner{grid-template-columns:repeat(2,1fr);row-gap:20px;}
     .stat{padding-left:0;border-left:none;} .inner{padding:0 18px;} .nav .inner{padding:0 18px;}
@@ -267,6 +272,8 @@
     <button data-tab="t5"><span class="n">05</span>Sưu tập Rồng · Kéo khách nam</button>
   </div>
 </nav>
+
+<div class="sync busy" id="syncBar"><span class="dot"></span><span id="syncTxt">Đang tải dữ liệu chung…</span></div>
 
 <!-- ============ STATS ============ -->
 <div class="body">
@@ -701,7 +708,54 @@ function fmtInt(n){return Math.round(n).toLocaleString('vi-VN');}
 function fmtVnd(n){return Math.round(n).toLocaleString('vi-VN')+'đ';}
 function fmtTr(n){return n.toLocaleString('vi-VN',{minimumFractionDigits:1,maximumFractionDigits:1})+'tr';}
 function fmtPct(n){return n.toLocaleString('vi-VN',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';}
-function LS(k,v){ if(v===undefined){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}} localStorage.setItem(k,JSON.stringify(v)); }
+/* ====== KHO DỮ LIỆU CHUNG ONLINE (mọi người mở link thấy & sửa chung) ====== */
+const REMOTE_URL = "https://jsonblob.com/api/jsonBlob/019fcfd8-f8e0-7057-8af2-f7fc4ab74146";
+const CACHE_KEY = "t8_pharma_cache";
+let STATE = {};
+let _dirty=false, _saving=false, _lastRemote="", _saveTimer=null;
+
+// API tương thích cũ: LS(k) đọc, LS(k,v) ghi
+function LS(k,v){ if(v===undefined){ return (k in STATE) ? STATE[k] : null; } STATE[k]=v; _cache(); scheduleSave(); }
+function DEL(k){ delete STATE[k]; _cache(); scheduleSave(); }
+function _cache(){ try{ localStorage.setItem(CACHE_KEY, JSON.stringify(STATE)); }catch(e){} }
+function setSync(txt,cls){ const el=document.getElementById('syncTxt'); if(el)el.textContent=txt; const b=document.getElementById('syncBar'); if(b)b.className='sync '+(cls||''); }
+function renderAll(){ renderMet(); renderMet2(); renderCamp(); renderToy(); renderKid(); renderCL(); }
+
+async function loadRemote(){
+  try{
+    const r=await fetch(REMOTE_URL,{cache:'no-store'});
+    if(r.ok){ const t=await r.text(); STATE=JSON.parse(t||'{}')||{}; _lastRemote=t; _cache(); setSync('Đã đồng bộ · mọi người thấy chung ✓','ok'); return; }
+  }catch(e){}
+  try{ const c=localStorage.getItem(CACHE_KEY); if(c) STATE=JSON.parse(c)||{}; }catch(e){}
+  setSync('Chưa kết nối máy chủ — dùng bản trên máy','warn');
+}
+function scheduleSave(){ _dirty=true; setSync('Đang lưu…','busy'); clearTimeout(_saveTimer); _saveTimer=setTimeout(saveRemote,1000); }
+async function saveRemote(){
+  if(_saving){ scheduleSave(); return; }
+  _saving=true; const body=JSON.stringify(STATE);
+  try{
+    const r=await fetch(REMOTE_URL,{method:'PUT',headers:{'Content-Type':'application/json'},body});
+    if(r.ok){ _lastRemote=body; _dirty=false; setSync('Đã lưu ✓ · mọi người thấy chung','ok'); }
+    else setSync('Lưu lỗi — sẽ thử lại','warn');
+  }catch(e){ setSync('Mất mạng — sẽ thử lại','warn'); setTimeout(scheduleSave,3000); }
+  _saving=false;
+}
+function startPoll(){
+  setInterval(async ()=>{
+    if(_dirty||_saving) return;
+    try{
+      const r=await fetch(REMOTE_URL,{cache:'no-store'});
+      if(r.ok){ const t=await r.text(); if(t!==_lastRemote){ STATE=JSON.parse(t||'{}')||{}; _lastRemote=t; _cache(); renderAll(); setSync('Có cập nhật mới từ người khác ✓','ok'); } }
+    }catch(e){}
+  },15000);
+}
+async function boot(){
+  try{ const c=localStorage.getItem(CACHE_KEY); if(c) STATE=JSON.parse(c)||{}; }catch(e){}
+  renderAll();            // hiển thị ngay từ bản đệm
+  await loadRemote();     // lấy dữ liệu chung
+  renderAll();            // áp dữ liệu chung
+  startPoll();            // tự cập nhật khi người khác sửa
+}
 
 /* ====== TABS ====== */
 document.querySelectorAll('.nav button').forEach(b=>{
@@ -761,7 +815,7 @@ function updateDayStat(){
 }
 $('#daySel').onchange=()=>{renderMet();renderMet2();};
 $('#regSel').onchange=()=>{renderMet();renderMet2();};
-$('#clearDay').onclick=()=>{ if(confirm('Xóa toàn bộ số đã nhập của ngày này (cả 2 bảng)?')){localStorage.removeItem(metKey(daySel()));localStorage.removeItem(absKey(daySel()));renderMet();renderMet2();} };
+$('#clearDay').onclick=()=>{ if(confirm('Xóa toàn bộ số đã nhập của ngày này (cả 2 bảng)?')){DEL(metKey(daySel()));DEL(absKey(daySel()));renderMet();renderMet2();} };
 $('#fillDemo').onclick=()=>{
   const d=daySel(), st={};
   SALONS.forEach((s,i)=>METRICS.forEach((m,j)=>{
@@ -909,7 +963,7 @@ function renderCamp(){
 $('#progSel').onchange=renderCamp;
 $('#regSel3').onchange=renderCamp;
 $('#marginIn').oninput=renderCamp;
-$('#clearProg').onclick=()=>{ if(confirm('Xóa số đã nhập của chương trình này?')){localStorage.removeItem(progKey($('#progSel').value));renderCamp();} };
+$('#clearProg').onclick=()=>{ if(confirm('Xóa số đã nhập của chương trình này?')){DEL(progKey($('#progSel').value));renderCamp();} };
 
 /* ================= TAB 5 · BỐ & CON ================= */
 const DINOS=[['🐉','Hắc Long'],['🐲','Kim Long'],['🦕','Thanh Long'],['🦖','Bạo Long'],['🔥','Hỏa Long'],['❄️','Băng Long'],['⚡','Lôi Long'],['🌊','Hải Long'],['🌪️','Phong Long'],['🗿','Thạch Long'],['🦂','Độc Long'],['👑','Long Vương']];
@@ -1036,7 +1090,7 @@ function renderCL(){
 $('#clReset').onclick=()=>{ if(confirm('Bỏ tích toàn bộ checklist?')){const st=LS(clKey())||{};Object.keys(st).forEach(k=>{if(st[k])st[k].done=false;});LS(clKey(),st);renderCL();} };
 
 /* ====== INIT ====== */
-renderMet(); renderMet2(); renderCamp(); renderToy(); renderKid(); renderCL();
+boot();
 </script>
 </body>
 </html>
